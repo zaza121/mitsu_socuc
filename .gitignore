@@ -1,5 +1,42 @@
 postgresql/
+config/odoo-server.log
+config/addons/
+config/sessions/
+config/filestore/
+
+
 etc/odoo-server.log
 etc/addons/
 etc/sessions/
 etc/filestore/
+tags/
+odoo-17.0/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+**.pyc
+
+**/__pycache__/
+*.py[cod]
+*.sublime-workspace
+*.sublime-project
+*.code-workspace
+
+source/
+.vscode/
+*.DS_Store
+
+tags
+
+# Cypress Artifacts
+e2e/cypress/screenshots/
+e2e/cypress/videos/
+
+#gitlab
+gitlab/logs
+
+# config file
+# idea files
+.idea/
+
+# custom project
