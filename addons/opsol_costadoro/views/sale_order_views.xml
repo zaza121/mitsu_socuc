@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data>
+
+        <record id="view_order_form_opsol" model="ir.ui.view">
+            <field name="name">sale.order.form</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//page[1]//list[1]//field[@name='product_id']" position="attributes">
+                    <attribute name="options">{'no_open': True, 'no_create': True}</attribute>
+                </xpath>
+                
+                <xpath expr="//page[1]//list[1]//field[@name='product_template_id']" position="attributes">
+                    <attribute name="options">{'no_open': True, 'no_create': True}</attribute>
+                </xpath>
+
+                <xpath expr="//page[1]//list[1]" position="inside">
+                    <field name="facturer_intervention" string="Payant ?" optional="hide"/>
+                    <field name="is_degustation" optional="hide"/>
+                    <field name="is_transport_fee" string="Transport ?" optional="hide"/>
+                    <field name="is_facturation_fee" string="facturation Frais ?" optional="hide"/>
+                </xpath>
+
+            </field>
+        </record>
+
+        <!-- <record id="view_order_invoice_discount_form_opsol" model="ir.ui.view">
+            <field name="name">sale.order.form</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="bi_sale_purchase_discount_with_tax.view_order_invoice_discount_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//list/field[@name='discount_type']" position="attributes">
+                    <attribute name="column_invisible">True</attribute>
+                </xpath>
+
+            </field>
+        </record> -->
+    
+    </data>
+</odoo>

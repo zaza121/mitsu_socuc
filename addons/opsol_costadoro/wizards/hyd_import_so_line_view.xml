@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="import_so_line_wiz_form_inh" model="ir.ui.view">
+        <field name="name">hyd_import_soline.import_so_line_wiz.form</field>
+        <field name="model">hyd_import_soline.import_so_line_wiz</field>
+        <field name="inherit_id" ref="hyd_import_soline.import_so_line_wiz_form" />
+        <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='file_csv']" position="after">
+                <field name="rubrique" />
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>

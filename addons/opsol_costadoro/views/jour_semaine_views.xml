@@ -1,0 +1,39 @@
+<odoo>
+
+    <record id="view_jour_semaine_filter" model="ir.ui.view">
+        <field name="name">opsol_costadoro.jour_semaine.search</field>
+        <field name="model">opsol_costadoro.jour_semaine</field>
+        <field name="arch" type="xml">
+            <search string="Recherche jour">
+                <field name="name" />
+            </search>
+        </field>
+    </record>
+
+    <record id="view_jour_semaine_tree" model="ir.ui.view">
+        <field name="name">opsol_costadoro.jour_semaine.tree</field>
+        <field name="model">opsol_costadoro.jour_semaine</field>
+        <field name="arch" type="xml">
+            <list string="Jour semaine" editable="top">
+                <field name="name"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="action_jour_semaine" model="ir.actions.act_window">
+        <field name="name">Jour semaine</field>
+        <field name="res_model">opsol_costadoro.jour_semaine</field>
+        <field name="view_mode">list</field>
+        <field name="help" type="html">
+          <p>Enregistrer un nouveau jour de semaine.</p>
+        </field>
+    </record>
+
+    <menuitem 
+        id="menu_configuration_jour_semaine"
+        name="Jour de la semaine"
+        action="action_jour_semaine"
+        parent="client_equipment.menu_configuration"
+        sequence="17" />
+
+</odoo>

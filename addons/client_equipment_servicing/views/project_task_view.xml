@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_view_task_form2_inherit" model="ir.ui.view">
+            <field name="name">project.task.inherit</field>
+            <field name="model">project.task</field>
+            <field name="inherit_id" ref="project.view_task_form2"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='user_ids']" position="after">
+                    <field name="project_name" invisible="1"/>
+                    <field name="site_contact"
+                        invisible="project_name != 'Field Service'"
+                        />
+                    <field name="site_phone"
+                        invisible="project_name != 'Field Service'"
+                        />
+                </xpath>
+                <xpath expr="//field[@name='task_properties']" position="after">
+                    <field name="load" invisible="1"/>
+                    <button name="action_load_jsa" string="Load Jsa" type="object" class="oe_highlight"
+                        invisible="load == 'True'"/>
+                </xpath>
+                <notebook  position="inside">
+                    <page name="jsa" string="JSA" 
+                        invisible="project_name != 'Field Service'">
+                        <group>
+                            <field name="supervisor" placeholder="Please select Supervisor"/>
+                        </group>
+                        <h3>Pre-Works questions:</h3>
+                        <field name="pre_responses_ids"/>
+                        <hr/>
+                        <h3>Post-Works questions:</h3>
+                        <field name="post_responses_ids"/>
+                        <group>
+                            <field name="signature" widget="signature"/>
+                        </group>
+                    </page>
+                </notebook>
+            </field>
+        </record>
+    </data>
+</odoo>

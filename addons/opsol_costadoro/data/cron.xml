@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding='UTF-8' ?>
+<odoo>
+    <record model="ir.cron" id="recurring_upd_equip_metric">
+        <field name="name">Mettre a jour metrique equipement</field>
+        <field name="model_id" ref="model_opsol_costadoro_line_metric" />
+        <field name="state">code</field>
+        <field name="code">model.update_time_metric()</field>
+        <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+        <!-- <field name="numbercall">-1</field> -->
+        <!-- <field name="doall" eval="False" /> -->
+    </record>
+</odoo>

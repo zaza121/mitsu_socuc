@@ -1,0 +1,95 @@
+<templates xml:space="preserve">
+   <t t-name="opsol_ajmarine.stat_reman_template">
+      <div class="w-100" style="overflow-x:scroll;">
+         
+         <h3 class="ml32">Informations Generales</h3>
+         <div class="row p-5 w-100">
+            <div class="card ml16" style="width: 20%;">
+              <div class="card-body">
+                <h5 class="card-title"><span class="h2" t-esc="props.statistics.bal_amt_due" /> € </h5>
+                <h6 class="card-subtitle mb-2 text-muted">ENERIA returned and not credited</h6>
+                <p class="card-text">statistic description</p>
+                <a href="#" class="card-link">Card link</a>
+                <a href="#" class="card-link">Another link</a>
+              </div>
+            </div>
+
+            <div class="card ml16" style="width: 20%;">
+              <div class="card-body">
+                <h5 class="card-title"><span class="h2" t-esc="props.statistics.bal_amt_ret" /> € </h5>
+                <h6 class="card-subtitle mb-2 text-muted">AJ MARINE left to return (€)</h6>
+                <p class="card-text">statistic description</p>
+                <a href="#" class="card-link">Card link</a>
+                <a href="#" class="card-link">Another link</a>
+              </div>
+            </div>
+
+            <div class="card ml16" style="width: 20%;">
+              <div class="card-body">
+                <h5 class="card-title"><span class="h2" t-esc="props.statistics.bal_ret_del" /> days </h5>
+                <h6 class="card-subtitle mb-2 text-muted">Average AJ MARINE return delay (days)</h6>
+                <p class="card-text">statistic description</p>
+                <a href="#" class="card-link">Card link</a>
+                <a href="#" class="card-link">Another link</a>
+              </div>
+            </div>
+
+            <div class="card ml16" style="width: 20%;">
+              <div class="card-body">
+                <h5 class="card-title"><span class="h2" t-esc="props.statistics.bal_cred_del" /> days </h5>
+                <h6 class="card-subtitle mb-2 text-muted">Average ENERIA credit delay</h6>
+                <p class="card-text">statistic description</p>
+                <a href="#" class="card-link">Card link</a>
+                <a href="#" class="card-link">Another link</a>
+              </div>
+            </div>
+
+            <!-- <div class="col-6">ENERIA returned and not credited (€)</div>
+            <div class="col-6"><t t-esc="props.en_returned" /></div> -->
+         </div>
+
+
+         <h3 class="ml32">REMAN Par status</h3>
+         <div class="row p-5">
+            <div class="card ml16" style="width: 20%;">
+              <div class="card-body">
+                <h5 class="card-title"><span class="h1 fw-bolder" t-esc="props.statistics.r_encours" /></h5>
+                <h6 class="card-subtitle mb-2 text-muted">En cours</h6>
+                <p class="card-text">REMAN en cours de traitement</p>
+                <button class="btn btn-primary" t-on-click="open_reman_encours">Voir</button>
+              </div>
+            </div>
+
+            <div class="card ml16" style="width: 20%;">
+              <div class="card-body">
+                <h5 class="card-title"><span class="h1 fw-bolder" t-esc="props.statistics.r_retcat" /></h5>
+                <h6 class="card-subtitle mb-2 text-muted">Returned CAT</h6>
+                <p class="card-text">REMAN Returne chez CATERPILLAR</p>
+                <button class="btn btn-primary" t-on-click="open_reman_cater">Voir</button>
+              </div>
+            </div>
+
+            <div class="card ml16" style="width: 20%;">
+              <div class="card-body">
+                <h5 class="card-title"><span class="h1 fw-bolder" t-esc="props.statistics.r_holdaj" /></h5>
+                <h6 class="card-subtitle mb-2 text-muted">HOLD AJ</h6>
+                <p class="card-text">REMAN detenus par AJ MARINE</p>
+                <button class="btn btn-primary" t-on-click="open_reman_holdaj">Voir</button>
+              </div>
+            </div>
+
+            <div class="card ml16" style="width: 20%;">
+              <div class="card-body">
+                <h5 class="card-title"><span class="h1 fw-bolder" t-esc="props.statistics.r_holdcust" /></h5>
+                <h6 class="card-subtitle mb-2 text-muted">HOLD Customer</h6>
+                <p class="card-text">REMAN retenus par le Client</p>
+                <button class="btn btn-primary" t-on-click="open_reman_holcust">Voir</button>
+              </div>
+            </div>
+
+         </div>
+      </div>
+      <!-- <p>Counter: <t t-esc="state.value"/></p>
+      <button class="btn btn-primary" t-on-click="increment">Increment</button> -->
+   </t>
+</templates>

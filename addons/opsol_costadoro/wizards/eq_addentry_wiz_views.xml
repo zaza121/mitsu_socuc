@@ -1,0 +1,48 @@
+<odoo>
+
+    <record id="view_eq_addentry_wiz" model="ir.ui.view">
+        <field name="name">Ajouter Mesure</field>
+        <field name="model">opsol_costadoro.eq_addentry_wiz</field>
+        <field name="arch" type="xml">
+            <form string="Ajouter une mesure">
+                <p>
+                    
+                </p>
+                <group>
+                    <group>
+                        <field name="equipment_id" invisible="1" />
+                        <field name="line_metric_id" domain="[('equipment_id', '=', equipment_id)]" />
+                        <field name="note" />
+                    </group>
+                    <group>
+                        <field name="use_hour" invisible="1" />
+                        <field name="date_start" invisible="not use_hour" />
+                        <field name="date_end" invisible="not use_hour" />
+                        <label for="value"/>
+                        <div name="value_uom" >
+                            <field name="value" class="oe_inline" />
+                            <span groups="uom.group_uom">
+                                <field name="uom_id" class="oe_inline"/>
+                            </span>
+                        </div>
+
+                    </group>
+                </group>
+                <footer>
+                    <button string="Sauvegarder" class="btn-primary" type="object" name="add_entry" data-hotkey="z"/>
+                    <button string="Fermer" class="btn-secondary" special="cancel" data-hotkey="z"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_eq_addentry_wiz" model="ir.actions.act_window">
+        <field name="name">Ajouter mesure</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">opsol_costadoro.eq_addentry_wiz</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="binding_view_types">list</field>
+    </record>
+
+</odoo>

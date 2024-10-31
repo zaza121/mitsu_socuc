@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data>
+
+        <record id="view_soline_form_opsol" model="ir.ui.view">
+            <field name="name">sale.order.line.form</field>
+            <field name="model">sale.order.line</field>
+            <field name="arch" type="xml">
+
+                <list string=''>
+                    <field name='order_id' />
+                    <field name='order_partner_id' column_invisible="1"/>
+                    <field name='order_date_order' optional="hide"/>
+                    <field name='product_id'/>
+                    <field name='product_uom_qty'/>
+                    <field name='price_unit' avg="Prix Moyen"/>
+                    <field name='currency_id' column_invisible="1"/>
+                    <field name='price_subtotal' sum="Total"/>
+                    <field name='price_total'/>
+                </list>
+
+            </field>
+        </record>
+
+        <record id="view_soline_search_opsol" model="ir.ui.view">
+            <field name="name">sale.order.line.search</field>
+            <field name="model">sale.order.line</field>
+            <field name="arch" type="xml">
+                <search string="Search lines">
+
+                    <field name="order_id" />
+                    <field name="order_date_order" />
+                    <field name="product_id" />
+                    <separator />
+                    <group expand="0" string="Group By">
+                        <filter string="Regrouper par Produit" name="groupby_product" context="{'group_by':'product_id'}"/>
+                    </group>
+
+                </search>
+            </field>
+        </record>
+
+        <record id="action_soline_opsol" model="ir.actions.act_window">
+            <field name="name">Lignes de vente</field>
+            <field name="res_model">sale.order.line</field>
+            <field name="view_mode">list</field>
+            <!-- <field name="view_id" ref="opsol_ajmarine.view_purchase_reman_tree"/> -->
+            <field name="search_view_id" ref="opsol_costadoro.view_soline_search_opsol"/>
+            <field name="context">{'search_default_groupby_product': 1}</field>
+            <!-- <field name="domain">[('is_reman', '=', True),('state', 'in', ['purchase', 'done'])]</field> -->
+            <field name="help" type="html">
+              <p>Lignes de ventes.</p>
+            </field>
+        </record>
+
+        <!-- <menuitem
+            id="menu_client_equipment_inters"
+            name="Lignes de vente"
+            action="action_soline_opsol"
+            parent="client_equipment.menu_client_equipment"
+            sequence="17"
+        /> -->
+    
+    </data>
+</odoo>

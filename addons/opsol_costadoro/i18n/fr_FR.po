@@ -1,0 +1,1468 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* opsol_costadoro
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0+e-20240312\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-09-16 14:02+0000\n"
+"PO-Revision-Date: 2024-09-16 18:40+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"X-Generator: Poedit 3.0.1\n"
+
+#. module: opsol_costadoro
+#: model_terms:ir.ui.view,arch_db:opsol_costadoro.view_equipment_details_form_opsol
+msgid "<span class=\"o_stat_text\">Bon de commande</span>"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model_terms:ir.ui.view,arch_db:opsol_costadoro.view_line_metric_form
+msgid "<span class=\"o_stat_text\">Entries</span>"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model_terms:ir.ui.view,arch_db:opsol_costadoro.view_partner_form_opsol
+msgid "<span class=\"o_stat_text\">Equipments</span>"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model_terms:ir.ui.view,arch_db:opsol_costadoro.view_partner_form_opsol
+msgid "<span class=\"o_stat_text\">Historique des prix</span>"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model_terms:ir.ui.view,arch_db:opsol_costadoro.view_equipment_details_form_opsol
+msgid "<span class=\"o_stat_text\">Historique</span>"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model_terms:ir.ui.view,arch_db:opsol_costadoro.view_equipment_details_form_opsol
+msgid "<span class=\"o_stat_text\">Interventions Preventives</span>"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model_terms:ir.ui.view,arch_db:opsol_costadoro.view_equipment_details_form_opsol
+msgid "<span class=\"o_stat_text\">Interventions</span>"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model_terms:ir.ui.view,arch_db:opsol_costadoro.view_equipment_details_form_opsol
+msgid "<span class=\"o_stat_text\">Livraisons</span>"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model_terms:ir.ui.view,arch_db:opsol_costadoro.view_equipment_details_form_opsol
+msgid "<span class=\"o_stat_text\">Revisions</span>"
+msgstr ""
+
+#. module: opsol_costadoro
+#. odoo-javascript
+#: code:addons/opsol_costadoro/static/src/stat_reman/stat_reman.xml:0
+#, python-format
+msgid "AJ MARINE left to return (€)"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_line_metric__message_needaction
+msgid "Action Needed"
+msgstr "Action Requise"
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_line_metric__active
+msgid "Active"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_line_metric__activity_ids
+msgid "Activities"
+msgstr "Activités"
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_line_metric__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Activité Exception Décoration"
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_line_metric__activity_state
+msgid "Activity State"
+msgstr "Etat de l'activité"
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_line_metric__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "Icone de type activité"
+
+#. module: opsol_costadoro
+#: model:ir.model,name:opsol_costadoro.model_opsol_costadoro_eq_addentry_wiz
+msgid "Add entry measure Equipment"
+msgstr "Ajouter une mesure d'equipement"
+
+#. module: opsol_costadoro
+#: model_terms:ir.ui.view,arch_db:opsol_costadoro.view_equipment_details_form_opsol
+#: model_terms:ir.ui.view,arch_db:opsol_costadoro.view_line_metric_form
+msgid "Ajouter Mesure"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.actions.act_window,name:opsol_costadoro.action_eq_addentry_wiz
+msgid "Ajouter mesure"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model_terms:ir.ui.view,arch_db:opsol_costadoro.view_eq_addentry_wiz
+msgid "Ajouter une mesure"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.ui.menu,name:opsol_costadoro.menu_client_equipment_analyse
+msgid "Analyse"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model_terms:ir.ui.view,arch_db:opsol_costadoro.view_stock_comparatif_report_form
+msgid "Analyse Estimation"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.actions.act_window,name:opsol_costadoro.action_stock_comparatif_report
+#: model:ir.ui.menu,name:opsol_costadoro.menu_client_equipment_analyse_estim
+msgid "Analyse Livraison - Estimation"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_equipment_details__ana_acc_id
+#: model:ir.model.fields,field_description:opsol_costadoro.field_res_partner__ana_acc_id
+#: model:ir.model.fields,field_description:opsol_costadoro.field_res_users__ana_acc_id
+msgid "Analytic Account"
+msgstr "Compte analytique"
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_equip_move_history__old_value
+msgid "Ancienne Valeur"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_stock_comparatif_report__date_year
+msgid "Annee"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model_terms:ir.ui.view,arch_db:opsol_costadoro.view_stock_comparatif_report_filter
+msgid "Annee en cours"
+msgstr ""
+
+#. module: opsol_costadoro
+#. odoo-javascript
+#: code:addons/opsol_costadoro/static/src/stat_reman/stat_reman.xml:0
+#, python-format
+msgid "Another link"
+msgstr "Autre lien"
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_zone_comm__archive
+msgid "Archive"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_line_metric__message_attachment_count
+msgid "Attachment Count"
+msgstr "Nombre de pièces jointes"
+
+#. module: opsol_costadoro
+#. odoo-javascript
+#: code:addons/opsol_costadoro/static/src/stat_reman/stat_reman.xml:0
+#, python-format
+msgid "Average AJ MARINE return delay (days)"
+msgstr ""
+
+#. module: opsol_costadoro
+#. odoo-javascript
+#: code:addons/opsol_costadoro/static/src/stat_reman/stat_reman.xml:0
+#, python-format
+msgid "Average ENERIA credit delay"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_equipment_details__sale_order_ids
+msgid "Bon de commande"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_res_partner__ccmx
+#: model:ir.model.fields,field_description:opsol_costadoro.field_res_users__ccmx
+msgid "CCMX Code comptable"
+msgstr ""
+
+#. module: opsol_costadoro
+#. odoo-javascript
+#: code:addons/opsol_costadoro/static/src/stat_reman/stat_reman.xml:0
+#, python-format
+msgid "Card link"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields.selection,name:opsol_costadoro.selection__equipment_details__cost_state__client
+msgid "Chez le client"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_equip_mvhistory_line__partner_id
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_line_metric__partner_id
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_metric_entry__partner_id
+#: model:ir.model.fields.selection,name:opsol_costadoro.selection__project_task__localisation_intervention__client
+msgid "Client"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model,name:opsol_costadoro.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_eq_addentry_wiz__create_uid
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_equip_move_history__create_uid
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_equip_mvhistory_line__create_uid
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_line_metric__create_uid
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_metric_entry__create_uid
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_metrique_equip__create_uid
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_model_equip__create_uid
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_zone_comm__create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_eq_addentry_wiz__create_date
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_equip_move_history__create_date
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_equip_mvhistory_line__create_date
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_line_metric__create_date
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_metric_entry__create_date
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_metrique_equip__create_date
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_model_equip__create_date
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_zone_comm__create_date
+msgid "Created on"
+msgstr "Créé le "
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,help:opsol_costadoro.field_sale_order_line__order_date_order
+msgid ""
+"Creation date of draft/sent orders,\n"
+"Confirmation date of confirmed orders."
+msgstr ""
+"Date de création des projets/ordres envoyés,\n"
+"Date de confirmation des ordres confirmés."
+
+#. module: opsol_costadoro
+#: model_terms:ir.ui.view,arch_db:opsol_costadoro.view_equipment_details_form_opsol
+msgid "Creer Intervention"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model_terms:ir.actions.act_window,help:opsol_costadoro.action_zone_comm
+msgid "Creez une nouvelle Zone Commerciale."
+msgstr ""
+
+#. module: opsol_costadoro
+#: model_terms:ir.actions.act_window,help:opsol_costadoro.action_line_metric
+msgid "Creez une nouvelle metrique equipement."
+msgstr ""
+
+#. module: opsol_costadoro
+#: model_terms:ir.actions.act_window,help:opsol_costadoro.action_metrique_equip
+msgid "Creez une nouvelle metrique pour equipement."
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_equip_move_history__date
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_equip_mvhistory_line__date
+msgid "Date"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_eq_addentry_wiz__date_start
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_metric_entry__date_start
+msgid "Date Debut"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_eq_addentry_wiz__date_end
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_metric_entry__date_end
+msgid "Date Fin"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_res_partner__gescom_created_date
+#: model:ir.model.fields,field_description:opsol_costadoro.field_res_users__gescom_created_date
+msgid "Date de création"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_equip_mvhistory_line__date_debut
+#: model:ir.model.fields,field_description:opsol_costadoro.field_res_partner__date_debut
+#: model:ir.model.fields,field_description:opsol_costadoro.field_res_users__date_debut
+msgid "Date de debut"
+msgstr ""
+
+#. module: opsol_costadoro
+#. odoo-python
+#: code:addons/opsol_costadoro/models/metric_entry.py:0
+#: code:addons/opsol_costadoro/wizards/eq_addentry_wiz.py:0
+#, python-format
+msgid "Date de debut ne peut pas etre apres date de fin"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_equip_mvhistory_line__date_fin
+#: model:ir.model.fields,field_description:opsol_costadoro.field_res_partner__date_fin
+#: model:ir.model.fields,field_description:opsol_costadoro.field_res_users__date_fin
+msgid "Date de fin"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_equipment_details__date_debut
+msgid "Date de mise a disposition"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_equipment_details__date_fin
+msgid "Date fin nise a disposition"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_res_partner__date_redr_jud
+#: model:ir.model.fields,field_description:opsol_costadoro.field_res_users__date_redr_jud
+msgid "Date redressement"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model_terms:ir.ui.view,arch_db:opsol_costadoro.view_partner_form_opsol
+msgid "Dates"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_sale_order_line__is_degustation
+msgid "Degustation ?"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_metrique_equip__description
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_model_equip__description
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_zone_comm__description
+msgid "Description"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_stock_comparatif_report__est_diff
+msgid "Difference"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_eq_addentry_wiz__display_name
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_equip_move_history__display_name
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_equip_mvhistory_line__display_name
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_line_metric__display_name
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_metric_entry__display_name
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_metrique_equip__display_name
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_model_equip__display_name
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_stock_comparatif_report__display_name
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_zone_comm__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields.selection,name:opsol_costadoro.selection__project_task__type_intervention__depann
+msgid "Dépannage"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields.selection,name:opsol_costadoro.selection__project_task__type_intervention__detart
+msgid "Détartrage"
+msgstr ""
+
+#. module: opsol_costadoro
+#. odoo-javascript
+#: code:addons/opsol_costadoro/static/src/stat_reman/stat_reman.xml:0
+#, python-format
+msgid "ENERIA returned and not credited"
+msgstr ""
+
+#. module: opsol_costadoro
+#. odoo-javascript
+#: code:addons/opsol_costadoro/static/src/stat_reman/stat_reman.xml:0
+#, python-format
+msgid "En cours"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model_terms:ir.actions.act_window,help:opsol_costadoro.action_model_equip
+msgid "Enregistrer un nouveau modele."
+msgstr ""
+
+#. module: opsol_costadoro
+#: model_terms:ir.actions.act_window,help:opsol_costadoro.action_metric_entry
+msgid "Enregistrer une nouvelle mesure."
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_res_partner__enseigne
+#: model:ir.model.fields,field_description:opsol_costadoro.field_res_users__enseigne
+msgid "Enseigne"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model,name:opsol_costadoro.model_opsol_costadoro_metric_entry
+msgid "Entree de de mesure"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.actions.act_window,name:opsol_costadoro.action_metric_entry
+#: model:ir.actions.act_window,name:opsol_costadoro.action_model_equip
+msgid "Entree de mesure"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model_terms:ir.ui.view,arch_db:opsol_costadoro.view_metric_entry_tree
+#: model_terms:ir.ui.view,arch_db:opsol_costadoro.view_model_equip_tree
+msgid "Entree metrique"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields.selection,name:opsol_costadoro.selection__equipment_details__cost_state__entre
+#: model:ir.model.fields.selection,name:opsol_costadoro.selection__project_task__localisation_intervention__entre
+msgid "Entrepot"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_line_metric__entries_ids
+#: model:ir.ui.menu,name:opsol_costadoro.menu_client_equipment_entrymet
+msgid "Entries"
+msgstr "Entrees"
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_equip_move_history__equip_id
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_equip_mvhistory_line__equip_id
+msgid "Equipement"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_project_task__quick_equipment_ids
+#: model:ir.model.fields,field_description:opsol_costadoro.field_res_partner__equipment_ids
+#: model:ir.model.fields,field_description:opsol_costadoro.field_res_users__equipment_ids
+msgid "Equipements"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_eq_addentry_wiz__equipment_id
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_line_metric__equipment_id
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_metric_entry__equipment_id
+msgid "Equipment"
+msgstr "Equipement"
+
+#. module: opsol_costadoro
+#: model:ir.model,name:opsol_costadoro.model_equipment_details
+msgid "Equipment Details"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model,name:opsol_costadoro.model_equipment_jobs
+msgid "Equipment Job"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_stock_move__equipments_ids
+msgid "Equipments"
+msgstr "Equipements"
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_product_product__is_cafe
+#: model:ir.model.fields,field_description:opsol_costadoro.field_product_template__is_cafe
+msgid "Est un cafe ?"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_stock_comparatif_report__estimation
+#: model_terms:ir.ui.view,arch_db:opsol_costadoro.view_partner_form_opsol
+msgid "Estimation"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_line_metric__state
+msgid "Etat"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_project_task__facturer_intervention
+#: model:ir.model.fields,field_description:opsol_costadoro.field_sale_order_line__facturer_intervention
+msgid "Facturer Intervention"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_res_partner__facturer_intervention
+#: model:ir.model.fields,field_description:opsol_costadoro.field_res_users__facturer_intervention
+msgid "Facturer intervention"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model_terms:ir.ui.view,arch_db:opsol_costadoro.view_eq_addentry_wiz
+msgid "Fermer"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model_terms:ir.actions.act_window,help:opsol_costadoro.project_task_action_fsm_opsol
+msgid "Find here your upcoming tasks for the next few days."
+msgstr "Retrouvez ici vos tâches à venir pour les prochains jours."
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_line_metric__message_follower_ids
+msgid "Followers"
+msgstr "Abonnes"
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_line_metric__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Abonnes (Contact)"
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,help:opsol_costadoro.field_opsol_costadoro_line_metric__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "Font awesome icon, par exemple fa-tasks"
+
+#. module: opsol_costadoro
+#: model:ir.model.fields.selection,name:opsol_costadoro.selection__project_task__type_intervention__format
+msgid "Formation"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_res_partner__facturation_amount
+#: model:ir.model.fields,field_description:opsol_costadoro.field_res_partner__facturation_product_id
+#: model:ir.model.fields,field_description:opsol_costadoro.field_res_partner__frais_facturation
+#: model:ir.model.fields,field_description:opsol_costadoro.field_res_users__facturation_amount
+#: model:ir.model.fields,field_description:opsol_costadoro.field_res_users__facturation_product_id
+#: model:ir.model.fields,field_description:opsol_costadoro.field_res_users__frais_facturation
+msgid "Frais de facturation"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_sale_order_line__is_facturation_fee
+msgid "Frais de facturation ?"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_res_partner__transport_product_id
+#: model:ir.model.fields,field_description:opsol_costadoro.field_res_users__transport_product_id
+#: model_terms:ir.ui.view,arch_db:opsol_costadoro.view_partner_form_opsol
+msgid "Frais de transport"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_sale_order_line__is_transport_fee
+msgid "Frais de transport ?"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model_terms:ir.ui.view,arch_db:opsol_costadoro.view_partner_form_opsol
+msgid "Frais divers"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model_terms:ir.ui.view,arch_db:opsol_costadoro.view_partner_form_opsol
+msgid "Gestion Commerciale"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_res_partner__gratuite
+#: model:ir.model.fields,field_description:opsol_costadoro.field_res_users__gratuite
+msgid "Gratuité"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model_terms:ir.ui.view,arch_db:opsol_costadoro.view_soline_search_opsol
+msgid "Group By"
+msgstr ""
+
+#. module: opsol_costadoro
+#. odoo-javascript
+#: code:addons/opsol_costadoro/static/src/stat_reman/stat_reman.xml:0
+#, python-format
+msgid "HOLD AJ"
+msgstr ""
+
+#. module: opsol_costadoro
+#. odoo-javascript
+#: code:addons/opsol_costadoro/static/src/stat_reman/stat_reman.xml:0
+#, python-format
+msgid "HOLD Customer"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_line_metric__has_message
+msgid "Has Message"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_equipment_details__partner_history_ids
+msgid "Historique"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model_terms:ir.ui.view,arch_db:opsol_costadoro.view_equipment_details_form_opsol
+msgid "Historique location"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.actions.act_window,name:opsol_costadoro.action_equip_move_history
+#: model:ir.ui.menu,name:opsol_costadoro.menu_client_equipment_historique
+#: model_terms:ir.ui.view,arch_db:opsol_costadoro.view_equip_move_history_tree
+msgid "Historiques"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_equipment_details__history_location_ids
+msgid "History Location"
+msgstr "Historiques d'emplacement"
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_eq_addentry_wiz__id
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_equip_move_history__id
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_equip_mvhistory_line__id
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_line_metric__id
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_metric_entry__id
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_metrique_equip__id
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_model_equip__id
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_stock_comparatif_report__id
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_zone_comm__id
+msgid "ID"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_line_metric__activity_exception_icon
+msgid "Icon"
+msgstr "Icone"
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,help:opsol_costadoro.field_opsol_costadoro_line_metric__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,help:opsol_costadoro.field_opsol_costadoro_line_metric__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,help:opsol_costadoro.field_opsol_costadoro_line_metric__message_has_error
+#: model:ir.model.fields,help:opsol_costadoro.field_opsol_costadoro_line_metric__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+"Si cette case est cochée, certains messages sont accompagnés d'une erreur "
+"de livraison."
+
+#. module: opsol_costadoro
+#. odoo-javascript
+#: code:addons/opsol_costadoro/static/src/stat_reman/stat_reman.xml:0
+#, python-format
+msgid "Informations Generales"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model_terms:ir.ui.view,arch_db:opsol_costadoro.view_partner_form_opsol
+msgid "Infos"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields.selection,name:opsol_costadoro.selection__project_task__type_intervention__install
+msgid "Installation"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.actions.act_window,name:opsol_costadoro.project_task_action_fsm_opsol
+#: model:ir.model.fields,field_description:opsol_costadoro.field_equipment_details__fsm_ids
+#: model:ir.ui.menu,name:opsol_costadoro.menu_client_equipment_inters
+msgid "Interventions"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_line_metric__message_is_follower
+msgid "Is Follower"
+msgstr "Est abonne"
+
+#. module: opsol_costadoro
+#. odoo-python
+#: code:addons/opsol_costadoro/models/equipment_details.py:0
+#, python-format
+msgid "L'equipement est actuellement en rebut"
+msgstr ""
+
+#. module: opsol_costadoro
+#. odoo-python
+#: code:addons/opsol_costadoro/models/sale_order.py:0
+#, python-format
+msgid "La date de fin validite du client %(client)s est depassee"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_equipment_details__last_intervention
+msgid "Last Intervention"
+msgstr "Dernière intervention"
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_eq_addentry_wiz__write_uid
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_equip_move_history__write_uid
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_equip_mvhistory_line__write_uid
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_line_metric__write_uid
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_metric_entry__write_uid
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_metrique_equip__write_uid
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_model_equip__write_uid
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_zone_comm__write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_eq_addentry_wiz__write_date
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_equip_move_history__write_date
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_equip_mvhistory_line__write_date
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_line_metric__write_date
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_metric_entry__write_date
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_metrique_equip__write_date
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_model_equip__write_date
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_zone_comm__write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_res_partner__gescom_map_commercial
+#: model:ir.model.fields,field_description:opsol_costadoro.field_res_users__gescom_map_commercial
+msgid "Lien Gescom"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_equipment_details__lines_metric_ids
+#: model:ir.model.fields,field_description:opsol_costadoro.field_project_task__lines_metric_ids
+#: model:ir.model.fields,field_description:opsol_costadoro.field_res_partner__lines_metric_ids
+#: model:ir.model.fields,field_description:opsol_costadoro.field_res_users__lines_metric_ids
+msgid "Lignes de metrique"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.actions.act_window,name:opsol_costadoro.action_soline_opsol
+msgid "Lignes de vente"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model_terms:ir.actions.act_window,help:opsol_costadoro.action_soline_opsol
+msgid "Lignes de ventes."
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_eq_addentry_wiz__line_metric_id
+msgid "Line metric"
+msgstr "Ligne metrique"
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_stock_comparatif_report__product_qty
+msgid "Livré"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_project_task__localisation_intervention
+msgid "Localisation Intervention"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_line_metric__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_line_metric__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_line_metric__metric_id
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_metric_entry__line_metric_id
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_metric_entry__metric_id
+msgid "Metric"
+msgstr "Métrique"
+
+#. module: opsol_costadoro
+#: model_terms:ir.ui.view,arch_db:opsol_costadoro.view_line_metric_filter
+msgid "Metric Equipement"
+msgstr "Métrique d'equipement"
+
+#. module: opsol_costadoro
+#: model:ir.actions.act_window,name:opsol_costadoro.action_metrique_equip
+msgid "Metrique Equipement"
+msgstr "Métrique d'equipements"
+
+#. module: opsol_costadoro
+#: model:ir.actions.act_window,name:opsol_costadoro.action_line_metric
+msgid "Metrique Equipements"
+msgstr "Métrique Equipements"
+
+#. module: opsol_costadoro
+#: model:ir.ui.menu,name:opsol_costadoro.menu_sale_config_metreq
+#: model_terms:ir.ui.view,arch_db:opsol_costadoro.view_metrique_equip_form
+msgid "Metrique Equipments"
+msgstr "Métrique Equipements"
+
+#. module: opsol_costadoro
+#: model:ir.model,name:opsol_costadoro.model_opsol_costadoro_line_metric
+msgid "Metrique d equipement"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model_terms:ir.ui.view,arch_db:opsol_costadoro.view_metrique_equip_tree
+msgid "Metrique equipment"
+msgstr "Métrique equipement"
+
+#. module: opsol_costadoro
+#: model_terms:ir.ui.view,arch_db:opsol_costadoro.product_template_only_form_view_inh_bi_sale
+#: model_terms:ir.ui.view,arch_db:opsol_costadoro.view_equipment_details_form_opsol
+msgid "Metriques"
+msgstr "Métrique"
+
+#. module: opsol_costadoro
+#: model_terms:ir.ui.view,arch_db:opsol_costadoro.view_partner_form_opsol
+#: model_terms:ir.ui.view,arch_db:opsol_costadoro.view_task_equipment_jobs_form2_inherit
+msgid "Metriques Actuelles"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.ui.menu,name:opsol_costadoro.menu_client_equipment_lmetric
+#: model_terms:ir.ui.view,arch_db:opsol_costadoro.view_line_metric_form
+msgid "Metriques Equipement"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_product_product__metrics_ids
+#: model:ir.model.fields,field_description:opsol_costadoro.field_product_template__metrics_ids
+msgid "Metriques de l'article"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.actions.server,name:opsol_costadoro.recurring_upd_equip_metric_ir_actions_server
+msgid "Mettre a jour metrique equipement"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.ui.menu,name:opsol_costadoro.menu_configuration_model_equip
+msgid "Modele Equipment"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_equipment_details__equip_model_id
+msgid "Modele equipement"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_equipment_details__move_ids
+msgid "Moves"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model,name:opsol_costadoro.model_opsol_costadoro_equip_move_history
+msgid "Moves history"
+msgstr "Historique des déplacements"
+
+#. module: opsol_costadoro
+#: model:ir.model,name:opsol_costadoro.model_opsol_costadoro_equip_mvhistory_line
+msgid "Moves history Line"
+msgstr "Ligne historique des déplacements"
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_line_metric__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "Mon délai d'activité"
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_metrique_equip__name
+msgid "Name"
+msgstr "Nom"
+
+#. module: opsol_costadoro
+#: model:ir.model.fields.selection,name:opsol_costadoro.selection__opsol_costadoro_line_metric__state__inter
+msgid "Need Intervention"
+msgstr "Intervention necessaire"
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_line_metric__p_create_intervention
+msgid "Need intervention ?"
+msgstr "Intervention necessaire ?"
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_line_metric__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Date limite de la prochaine activité"
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_line_metric__activity_summary
+msgid "Next Activity Summary"
+msgstr "Résumé de l'activité suivante"
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_line_metric__activity_type_id
+msgid "Next Activity Type"
+msgstr "Type d'activité suivante"
+
+#. module: opsol_costadoro
+#: model_terms:ir.actions.act_window,help:opsol_costadoro.project_task_action_fsm_opsol
+msgid "No tasks found. Let's create one!"
+msgstr "Aucune tâche n'a été trouvée. Créons-en une !"
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_line_metric__name
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_model_equip__name
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_zone_comm__name
+msgid "Nom"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.constraint,message:opsol_costadoro.constraint_opsol_costadoro_zone_comm_name_unique
+msgid "Nom de la zone doit etre unique."
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields.selection,name:opsol_costadoro.selection__opsol_costadoro_line_metric__state__normal
+msgid "Normal"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_eq_addentry_wiz__note
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_metric_entry__note
+msgid "Note"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_equip_move_history__new_value
+msgid "Nouvelle valeur"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_line_metric__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_res_partner__equipments_count
+#: model:ir.model.fields,field_description:opsol_costadoro.field_res_users__equipments_count
+msgid "Number of Equipment"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_equipment_details__fsm_count
+msgid "Number of Intervention"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_equipment_details__fsm_count_prev
+msgid "Number of Intervention Preventive"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_equipment_details__fsm_rev_count
+msgid "Number of Revisions"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_equipment_details__saleorder_count
+msgid "Number of Sale order"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_line_metric__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,help:opsol_costadoro.field_opsol_costadoro_line_metric__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,help:opsol_costadoro.field_opsol_costadoro_line_metric__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_equipment_details__picking_number
+msgid "Number of picking"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model_terms:ir.ui.view,arch_db:opsol_costadoro.view_partner_form_opsol
+msgid "Options Commerciales"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_sale_order_line__order_date_order
+msgid "Order Date"
+msgstr "Date comande"
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_stock_move__out_move_sign
+msgid "Out Move Sign"
+msgstr "Signe Mouvement de sortie"
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_stock_comparatif_report__partner_id
+msgid "Partner"
+msgstr "Partenaire"
+
+#. module: opsol_costadoro
+#: model_terms:ir.ui.view,arch_db:opsol_costadoro.view_order_form_opsol
+msgid "Payant ?"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model_terms:ir.ui.view,arch_db:opsol_costadoro.view_soline_form_opsol
+msgid "Prix Moyen"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model,name:opsol_costadoro.model_product_template
+msgid "Product"
+msgstr "Produit"
+
+#. module: opsol_costadoro
+#: model:ir.ui.menu,name:opsol_costadoro.menu_client_equipment_product
+msgid "Produits"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_line_metric__progress_metric
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_line_metric__progress_metric_per
+msgid "Progress"
+msgstr "Progres"
+
+#. module: opsol_costadoro
+#. odoo-python
+#: code:addons/opsol_costadoro/models/equipment_details.py:0
+#, python-format
+msgid "Projet for On Field Service not found"
+msgstr "Projet pour On Field Service introuvable"
+
+#. module: opsol_costadoro
+#: model:ir.model.fields.selection,name:opsol_costadoro.selection__project_task__type_intervention__prevent
+msgid "Préventif"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields.selection,name:opsol_costadoro.selection__project_task__type_intervention__qualit
+msgid "Qualité"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_res_partner__estimation_qty
+#: model:ir.model.fields,field_description:opsol_costadoro.field_res_users__estimation_qty
+#: model_terms:ir.ui.view,arch_db:opsol_costadoro.view_partner_form_opsol
+msgid "Quantite"
+msgstr ""
+
+#. module: opsol_costadoro
+#. odoo-javascript
+#: code:addons/opsol_costadoro/static/src/stat_reman/stat_reman.xml:0
+#, python-format
+msgid "REMAN Par status"
+msgstr ""
+
+#. module: opsol_costadoro
+#. odoo-javascript
+#: code:addons/opsol_costadoro/static/src/stat_reman/stat_reman.xml:0
+#, python-format
+msgid "REMAN Returne chez CATERPILLAR"
+msgstr ""
+
+#. module: opsol_costadoro
+#. odoo-javascript
+#: code:addons/opsol_costadoro/static/src/stat_reman/stat_reman.xml:0
+#, python-format
+msgid "REMAN detenus par AJ MARINE"
+msgstr ""
+
+#. module: opsol_costadoro
+#. odoo-javascript
+#: code:addons/opsol_costadoro/static/src/stat_reman/stat_reman.xml:0
+#, python-format
+msgid "REMAN en cours de traitement"
+msgstr ""
+
+#. module: opsol_costadoro
+#. odoo-javascript
+#: code:addons/opsol_costadoro/static/src/stat_reman/stat_reman.xml:0
+#, python-format
+msgid "REMAN retenus par le Client"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_line_metric__rating_ids
+msgid "Ratings"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields.selection,name:opsol_costadoro.selection__equipment_details__cost_state__rebut
+msgid "Rebut"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model_terms:ir.ui.view,arch_db:opsol_costadoro.view_metric_entry_filter
+#: model_terms:ir.ui.view,arch_db:opsol_costadoro.view_model_equip_filter
+msgid "Recherche entree"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_res_partner__redressement_jud
+#: model:ir.model.fields,field_description:opsol_costadoro.field_res_users__redressement_jud
+msgid "Redressement judiciaire ?"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_line_metric__reference_intervention
+msgid "Reference Intervention"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model_terms:ir.ui.view,arch_db:opsol_costadoro.view_soline_search_opsol
+msgid "Regrouper par Produit"
+msgstr ""
+
+#. module: opsol_costadoro
+#. odoo-python
+#: code:addons/opsol_costadoro/models/line_metric.py:0
+#, python-format
+msgid "Reinitialisation indicateurs equipement %(equip)s"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_project_task_type__remove_analines
+msgid "Remove Analytic Lines?"
+msgstr "Retirer Ecritures analytiques"
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,help:opsol_costadoro.field_project_task_type__remove_analines
+msgid "Remove account line when a task in move to this step"
+msgstr ""
+"Supprimer la ligne de compte lorsqu'une tâche est déplacée vers cette étape"
+
+#. module: opsol_costadoro
+#: model:ir.model.fields.selection,name:opsol_costadoro.selection__project_task__type_intervention__reprise
+msgid "Reprise"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_line_metric__activity_user_id
+msgid "Responsible User"
+msgstr "Responsable"
+
+#. module: opsol_costadoro
+#. odoo-javascript
+#: code:addons/opsol_costadoro/static/src/stat_reman/stat_reman.xml:0
+#, python-format
+msgid "Returned CAT"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields.selection,name:opsol_costadoro.selection__project_task__type_intervention__revisi
+msgid "Révision"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_line_metric__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model,name:opsol_costadoro.model_sale_order
+msgid "Sales Order"
+msgstr "Bon de commande"
+
+#. module: opsol_costadoro
+#: model:ir.model,name:opsol_costadoro.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Ligne de commande"
+
+#. module: opsol_costadoro
+#: model_terms:ir.ui.view,arch_db:opsol_costadoro.view_eq_addentry_wiz
+msgid "Sauvegarder"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model_terms:ir.ui.view,arch_db:opsol_costadoro.view_metrique_equip_filter
+msgid "Search Metrique"
+msgstr "Rechercher Metrique"
+
+#. module: opsol_costadoro
+#: model_terms:ir.ui.view,arch_db:opsol_costadoro.view_zone_comm_filter
+msgid "Search Zone"
+msgstr "Rechercher zone"
+
+#. module: opsol_costadoro
+#: model_terms:ir.ui.view,arch_db:opsol_costadoro.view_stock_comparatif_report_filter
+msgid "Search estimation"
+msgstr "Rechercher estimation"
+
+#. module: opsol_costadoro
+#: model_terms:ir.ui.view,arch_db:opsol_costadoro.view_soline_search_opsol
+msgid "Search lines"
+msgstr "Rechercher des lignes"
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_line_metric__serial_no
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_metric_entry__serial_no
+msgid "Serial Number"
+msgstr "Numéro de serie"
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_equipment_details__cost_state
+msgid "State"
+msgstr "Etat"
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,help:opsol_costadoro.field_opsol_costadoro_line_metric__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"Statut basé sur les activités\n"
+"En retard : La date d'échéance est déjà dépassée\n"
+"Aujourd'hui : La date de l'activité est aujourd'hui\n"
+"Planifié : Activités futures."
+
+#. module: opsol_costadoro
+#: model:ir.model,name:opsol_costadoro.model_opsol_costadoro_stock_comparatif_report
+msgid "Stock Comparatif Report"
+msgstr "Rapport comparatif des stocks"
+
+#. module: opsol_costadoro
+#: model:ir.model,name:opsol_costadoro.model_stock_move
+msgid "Stock Move"
+msgstr "Mouvement de stock"
+
+#. module: opsol_costadoro
+#: model:ir.ui.menu,name:opsol_costadoro.menu_client_equipment_suivi
+msgid "Suivi"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model,name:opsol_costadoro.model_project_task
+#: model:ir.model.fields,field_description:opsol_costadoro.field_equipment_jobs__task_id
+msgid "Task"
+msgstr "Tâche"
+
+#. module: opsol_costadoro
+#: model:ir.model,name:opsol_costadoro.model_project_task_type
+msgid "Task Stage"
+msgstr "Étape de tâche"
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_res_partner__tier_parent_id
+#: model:ir.model.fields,field_description:opsol_costadoro.field_res_users__tier_parent_id
+msgid "Tier Parent"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model_terms:ir.ui.view,arch_db:opsol_costadoro.view_soline_form_opsol
+msgid "Total"
+msgstr ""
+
+#. module: opsol_costadoro
+#. odoo-python
+#: code:addons/opsol_costadoro/models/account_move.py:0
+#, python-format
+msgid "Total {}: {:,.2f} {}"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model_terms:ir.ui.view,arch_db:opsol_costadoro.view_order_form_opsol
+msgid "Transport ?"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_res_partner__transport_amount
+#: model:ir.model.fields,field_description:opsol_costadoro.field_res_users__transport_amount
+msgid "Transport amount"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_project_task__type_intervention
+msgid "Type Intervention"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_res_partner__type_cafe
+#: model:ir.model.fields,field_description:opsol_costadoro.field_res_users__type_cafe
+msgid "Type de café"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model,name:opsol_costadoro.model_opsol_costadoro_metrique_equip
+msgid "Type de metrique"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,help:opsol_costadoro.field_opsol_costadoro_line_metric__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_res_partner__estimation_uom_id
+#: model:ir.model.fields,field_description:opsol_costadoro.field_res_users__estimation_uom_id
+msgid "Unite"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_eq_addentry_wiz__uom_id
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_line_metric__uom_id
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_metric_entry__uom_id
+msgid "Unite de mesure"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_eq_addentry_wiz__use_hour
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_line_metric__use_hour
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_metric_entry__use_hour
+msgid "Use Hour"
+msgstr "Utiliser heures"
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_equip_move_history__user_id
+msgid "Utilisateur"
+msgstr ""
+
+#. module: opsol_costadoro
+#. odoo-python
+#: code:addons/opsol_costadoro/models/line_metric.py:0
+#, python-format
+msgid "Utilisation equipement %(equip)s de '%(debut)s' a '%(fin)s'"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,help:opsol_costadoro.field_opsol_costadoro_line_metric__reference_intervention
+msgid ""
+"Valeur reference pour declencher une nouvelle intervention sur l'equipement."
+msgstr ""
+
+#. module: opsol_costadoro
+#: model_terms:ir.ui.view,arch_db:opsol_costadoro.view_line_metric_form
+msgid "Valeurs"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_eq_addentry_wiz__value
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_metric_entry__value
+msgid "Value"
+msgstr ""
+
+#. module: opsol_costadoro
+#. odoo-javascript
+#: code:addons/opsol_costadoro/static/src/stat_reman/stat_reman.xml:0
+#, python-format
+msgid "Voir"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model_terms:ir.ui.view,arch_db:opsol_costadoro.view_equipment_details_form_opsol
+msgid "Vous confirmez la reinitialisation ?"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_line_metric__website_message_ids
+msgid "Website Messages"
+msgstr "Messages du site web"
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,help:opsol_costadoro.field_opsol_costadoro_line_metric__website_message_ids
+msgid "Website communication history"
+msgstr "Historique de la communication sur le site web"
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_res_partner__zone_id
+#: model:ir.model.fields,field_description:opsol_costadoro.field_res_users__zone_id
+msgid "Zone Commerciale"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.ui.menu,name:opsol_costadoro.menu_sale_config_zone
+#: model_terms:ir.ui.view,arch_db:opsol_costadoro.view_zone_comm_form
+msgid "Zone commerciale"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.actions.act_window,name:opsol_costadoro.action_zone_comm
+msgid "Zones Commerciales"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model_terms:ir.ui.view,arch_db:opsol_costadoro.view_line_metric_tree
+#: model_terms:ir.ui.view,arch_db:opsol_costadoro.view_stock_comparatif_report_tree
+#: model_terms:ir.ui.view,arch_db:opsol_costadoro.view_zone_comm_tree
+msgid "Zones commerciales"
+msgstr ""
+
+#. module: opsol_costadoro
+#. odoo-javascript
+#: code:addons/opsol_costadoro/static/src/stat_reman/stat_reman.xml:0
+#, python-format
+msgid "days"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model_terms:ir.ui.view,arch_db:opsol_costadoro.view_order_form_opsol
+msgid "facturation Frais ?"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model_terms:ir.actions.act_window,help:opsol_costadoro.action_equip_move_history
+msgid "l historique de vos modification vont apparaitre ici."
+msgstr ""
+
+#. module: opsol_costadoro
+#. odoo-python
+#: code:addons/opsol_costadoro/models/line_metric.py:0
+#: code:addons/opsol_costadoro/models/metric_entry.py:0
+#: code:addons/opsol_costadoro/wizards/eq_addentry_wiz.py:0
+#, python-format
+msgid ""
+"l'unite de mesure de base heure est manquante, veuillez svp corriger cette "
+"erreur."
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model,name:opsol_costadoro.model_opsol_costadoro_model_equip
+msgid "opsol_costadoro.model_equip"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model,name:opsol_costadoro.model_opsol_costadoro_zone_comm
+msgid "opsol_costadoro.zone_comm"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model_terms:ir.ui.view,arch_db:opsol_costadoro.view_equipment_details_form_opsol
+msgid "reinitialiser Indicateurs"
+msgstr ""
+
+#. module: opsol_costadoro
+#. odoo-javascript
+#: code:addons/opsol_costadoro/static/src/stat_reman/stat_reman.xml:0
+#, python-format
+msgid "statistic description"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_metrique_equip__uom_id
+msgid "unite de mesure"
+msgstr ""
+
+#. module: opsol_costadoro
+#: model:ir.model.fields,field_description:opsol_costadoro.field_opsol_costadoro_line_metric__current_measure
+msgid "valeur Actuelle"
+msgstr ""

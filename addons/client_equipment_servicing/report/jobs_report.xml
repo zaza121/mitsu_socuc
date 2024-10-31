@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="report_job_details">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <div class="row">
+                    <div t-attf-class="{{('col-6' if report_type == 'pdf' else 'col-md-6 col-12') + ' mb-3'}}">
+                        <t t-if="docs.partner_id">
+                            <div><strong>Customer: </strong></div>
+                            <div t-out="docs.partner_id" t-options='{
+                                    "widget": "contact",
+                                    "fields": ["name", "address", "phone", "email"]}'/>
+                        </t>
+                    </div>
+                </div>
+                <t class="page">
+                    <div class="oe_structure"/>
+                    <div t-attf-class="#{'table-responsive-sm' if report_type != 'pdf' else ''}">
+                        <t t-if="docs.equipment_ids">
+                            <t t-set="job_count" t-value="0"/>
+                            <t t-foreach="docs.equipment_ids" t-as="job">
+                                <t t-set="job_count" t-value="job_count + 1"/>
+                                <h2>Jobs <t t-esc="job_count"/></h2>
+                                <table class="table table-condensed">
+                                    <tr>
+                                        <td>
+                                            <strong class="text-start">Name</strong>
+                                        </td>
+                                        <td>
+                                            <span t-field="job.equipment"/>
+                                        </td>
+                                        <td>
+                                            <strong class="text-start">Model</strong>
+                                        </td>
+                                        <td>
+                                            <span t-field="job.model"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <strong class="text-start">Serial No</strong>
+                                        </td>
+                                        <td>
+                                            <span t-field="job.serial_no"/>
+                                        </td>
+                                        <td>
+                                            <strong class="text-start">Service Date</strong>
+                                        </td>
+                                        <td>
+                                            <span t-field="job.service_date"/>
+                                        </td>
+                                    </tr>
+
+                                </table>
+                                <strong> Technician: </strong>
+                                <span t-field="job.assignee"/> <br/>
+                                <strong> Location: </strong> <br/>
+                                <span t-field="job.location"/> <br/>
+                                <strong class="text-start">Issues: </strong> <br/>
+                                <span t-field="job.issues"/> <br/>
+                                <strong class="text-start">Report:</strong> <br/>
+                                <span t-field="job.report"/> <br/>
+                                <hr/>
+                            </t>
+                        </t>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

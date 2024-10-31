@@ -1,0 +1,10 @@
+<odoo>
+  <data>
+    <record model="ir.actions.client" id="dashboard">
+      <field name="name">Dashboard</field>
+      <field name="tag">opsol_ajmarine.dashboard</field>
+    </record>
+
+    <menuitem name="Dashboard" id="opsol_ajmarine.menu_reman_root_dashboard" parent="opsol_ajmarine.menu_reman_root" action="opsol_ajmarine.dashboard" sequence="10"/>
+  </data>
+</odoo> 

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="seq_job_sequence" model="ir.sequence">
+        <field name="name">job Sequence</field>
+        <field name="code">job.sequence</field>
+        <field name="prefix">J</field>
+        <field name="padding">6</field>
+        <field name="company_id" eval="False"/>
+    </record>
+</odoo>

@@ -1,0 +1,90 @@
+<odoo>
+
+	<record id="view_line_metric_form" model="ir.ui.view">
+        <field name="name">opsol_costadoro.line_metric.form</field>
+        <field name="model">opsol_costadoro.line_metric</field>
+        <field name="arch" type="xml">
+            <form string="Metriques Equipement">
+                <header>
+                    <field name="state" widget="statusbar" />
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_addentry" string="Ajouter Mesure"  type="object"/>
+                        <field name="entries_ids" invisible="True"/>
+                        <button name="action_open_entries" type="object" class="oe_stat_button" icon="fa-history" invisible="not entries_ids">
+                            <div class="o_field_widget o_stat_info"><span class="o_stat_text">Entries</span></div>
+                        </button>
+                    </div>
+                    <div class="oe_title">
+                        <label for="equipment_id"/>
+                        <h3><field name="equipment_id" required="True"/></h3>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="partner_id" />
+                            <field name="serial_no" />
+                            <field name="metric_id" />
+                            <field name="p_create_intervention" invisible="0" />
+                        </group>
+                        <group string="Valeurs">
+                            <field name="reference_intervention" />
+                            <field name="current_measure" />
+                            <field name="uom_id" />
+                            <field name="progress_metric" widget="percentage"/>
+                        </group>
+                    </group>
+                </sheet>
+                <chatter />
+            </form>
+        </field>
+    </record>
+
+    <record id="view_line_metric_filter" model="ir.ui.view">
+        <field name="name">opsol_costadoro.line_metric.lead</field>
+        <field name="model">opsol_costadoro.line_metric</field>
+        <field name="arch" type="xml">
+            <search string="Metric Equipement">
+                <field name="partner_id" />
+                <field name="serial_no" />
+            </search>
+        </field>
+    </record>
+
+    <record id="view_line_metric_tree" model="ir.ui.view">
+        <field name="name">opsol_costadoro.line_metric.tree</field>
+        <field name="model">opsol_costadoro.line_metric</field>
+        <field name="arch" type="xml">
+            <list string="Zones commerciales">
+                <field name="partner_id"/>
+                <field name="equipment_id"/>
+                <field name="serial_no"/>
+                <field name="metric_id"/>
+                <field name="reference_intervention"/>
+                <field name="current_measure"/>
+                <field name="uom_id"/>
+                <field name="progress_metric" widget="percentage" column_invisible="1"/>
+                <field name="progress_metric_per" widget="badge" decoration-danger="progress_metric &gt; 1" decoration-success="progress_metric &lt; 0.9" decoration-warning="progress_metric &lt;= 1 and progress_metric &gt;= 0.9"/>
+                <field name="state" />
+            </list>
+        </field>
+    </record>
+
+    <record id="action_line_metric" model="ir.actions.act_window">
+        <field name="name">Metrique Equipements</field>
+        <field name="res_model">opsol_costadoro.line_metric</field>
+        <field name="view_mode">list,form</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+          <p>Creez une nouvelle metrique equipement.</p>
+        </field>
+    </record>
+
+    <menuitem 
+        id="menu_client_equipment_lmetric"
+        name="Metriques Equipement"
+        action="action_line_metric"
+        parent="opsol_costadoro.menu_client_equipment_suivi"
+        sequence="15" />
+
+</odoo>
