@@ -16,7 +16,7 @@
 
     'depends': [
         'sale', 'account', 'client_equipment_servicing', 'tracking_manager', 'base_automation',
-        'industry_fsm_sale',
+        'industry_fsm_sale', 'stock',
     ],
 
     'data': [
