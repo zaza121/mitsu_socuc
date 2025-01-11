@@ -1,0 +1,71 @@
+# -*- coding: utf-8 -*-
+from odoo import api, fields, models, Command, _
+from odoo.osv import expression
+from odoo.exceptions import ValidationError
+
+
+class SaleOrderLine(models.Model):
+    _inherit = 'sale.order.line'
+
+    role_id = fields.Many2one(
+        comodel_name='planning.role',
+        string='Role',
+    )
+    force_modele_id = fields.Many2one(
+        comodel_name='account.analytic.distribution.model',
+        string='Force Modele analytique',
+    )
+
+    @api.onchange('role_id', 'product_uom')
+    def _onchange_role_id(self):
+        if self.role_id and self.product_uom:
+            line = self.role_id.cost_ids.filtered(lambda x: x.uom_id.id == self.product_uom.id)
+            if line:
+                self.price_unit = line.amount
+
+    @api.onchange('force_modele_id')
+    def _onchange_force_modele_id(self):
+        anadist = {}
+
+        if self.force_modele_id:
+            anadist.update(self.force_modele_id.analytic_distribution)
+        self.analytic_distribution = anadist
+
+    @api.depends('order_id.partner_id', 'product_id')
+    def _compute_analytic_distribution(self):
+        with_distri = self.filtered(lambda x: x.order_id.force_distribution_id)
+        without_distri = self - with_distri
+        for line in with_distri:
+            line.force_modele_id = line.order_id.force_distribution_id
+            line.analytic_distribution = line.order_id.force_distribution_id.analytic_distribution
+        super(SaleOrderLine, with_distri)._compute_analytic_distribution()
+
+    def _timesheet_create_project_prepare_values(self):
+        res = super()._timesheet_create_project_prepare_values()
+
+        if self.analytic_distribution:
+            keys = ','.join(self.analytic_distribution.keys())
+            ana_dist = [int(elt) for elt in keys.split(",")]
+            accounts = self.env["account.analytic.account"].browse(ana_dist)
+            map_plan_acc = {acc.plan_id.id: acc.id for acc in accounts}
+            map_fields_plan = {f"x_plan{p.id}_id": map_plan_acc.get(p.id) for p in accounts.mapped("plan_id")}
+            fields = self.env["ir.model.fields"].search([
+                ('model_id.model', '=', "project.project"),
+                ('name', 'in', list(map_fields_plan.keys()))
+            ])
+
+            for _fie in fields:
+                res[_fie.name] = map_fields_plan.get(_fie.name, None)
+        return res
+
+    @api.constrains("order_id.project_id", 'state')
+    def get_project_account_id(self):
+        for rec in self:
+            if rec.project_id and rec.project_id.account_id:
+                account = rec.project_id.account_id
+                ana_lines = rec.analytic_distribution.keys()
+                found_in = [k for k in ana_lines if f"{account.id}" in k]
+                if not found_in:
+                    gop = rec.analytic_distribution
+                    gop.update({f"{account.id}": 100})
+                    rec.analytic_distribution = gop

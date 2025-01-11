@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+
+        <record id="slot_generer_timesheet_action" model="ir.actions.server">
+            <field name="name">Generer Timesheet</field>
+            <field name="model_id" ref="planning.model_planning_slot"/>
+            <field name="binding_model_id" ref="planning.model_planning_slot"/>
+            <field name="binding_view_types">list</field>
+            <field name="state">code</field>
+            <field name="code">action = records.generate_timesheet()</field>
+        </record>
+
+    </data>
+</odoo>

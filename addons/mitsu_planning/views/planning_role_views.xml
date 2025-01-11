@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="planning_role_view_form_mitsu" model="ir.ui.view">
+        <field name="name">planning.role.form.mitsu</field>
+        <field name="model">planning.role</field>
+        <field name="inherit_id" ref="planning.planning_role_view_tree"/>
+        <field name="arch" type="xml">
+            
+            <xpath expr="//list[1]" position="attributes">
+                <attribute name="editable"></attribute>
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>

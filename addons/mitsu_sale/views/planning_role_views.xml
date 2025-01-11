@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="planning_role_view_form_mitsu" model="ir.ui.view">
+        <field name="name">planning.role.form.mitsu</field>
+        <field name="model">planning.role</field>
+        <field name="inherit_id" ref="planning.planning_role_view_form"/>
+        <field name="arch" type="xml">
+            
+            <xpath expr="//sheet[1]" position="inside">
+                <notebook>
+                    <page string="Couts">
+                        <field name="cost_ids">
+                            <list editable="bottom">
+                                <field name="role_id" invisible="True"/> 
+                                <field name="uom_id" /> 
+                                <field name="amount" /> 
+                            </list>
+                        </field>
+                    </page>
+                </notebook>
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>

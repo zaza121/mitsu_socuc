@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_order_form_mitsu" model="ir.ui.view">
+        <field name="name">sale.order.form.mitsu</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            
+            <xpath expr="//field[@name='order_line']//list[1]//field[@name='analytic_distribution']" position="before">
+                <field name="force_modele_id" optional="hide" />
+            </xpath>
+
+            <xpath expr="//field[@name='order_line']//list[1]//field[@name='analytic_distribution']" position="after">
+                <field name="role_id" optional="show" />
+            </xpath>
+
+            <xpath expr="//field[@name='journal_id']" position="after">
+                <field name="force_distribution_id" />
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>

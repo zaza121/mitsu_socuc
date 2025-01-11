@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_mitsu_sale_cost_role_line,mitsu_sale_cost_role_line,model_mitsu_sale_cost_role_line,,1,1,1,1
