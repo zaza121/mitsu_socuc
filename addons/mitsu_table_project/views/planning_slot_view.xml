@@ -19,8 +19,9 @@
                     <field name="project_id" />
                     <field name="task_id" readonly="1"/>
                     <field name="sale_line_id"  readonly="1"/>
-                    <field name="price_unit_table"  widget="monetary" readonly="1"/>
-                    <field name="quantity_table"  readonly="1"/>
+                    <field name="price_unit_table"  widget="monetary"  sum="Total prix unitaire"
+                        readonly="1"/>
+                    <field name="quantity_table"  sum="Quantité" readonly="1"/>
                     <field name="time_task_table" string="Temps sur la tâche" 
                         widget="timesheet_uom_no_toggle"  readonly="1"/>
                     <field name="allocated_hours" string="Temps planifié" 
@@ -32,21 +33,25 @@
                     <field name="time_to_realize_effective" string="Temps à réaliser" 
                         widget="timesheet_uom_no_toggle"  optional="hide" readonly="1"/>
                     <field name="hourly_cost_table" 
-                        widget="monetary"  optional="hide" readonly="1"/>
+                        widget="monetary"  sum="Total coût unitaire de l'employée" optional="hide" readonly="1"/>
                     <field name="employee_cost_total_task" 
-                        widget="monetary"  optional="hide" readonly="1"/>
+                        widget="monetary"  optional="hide" readonly="1" sum="Total de l'employée"/>
                     <field name="projected_sales" 
-                        widget="monetary"  optional="hide" readonly="1"/>
+                        widget="monetary"  optional="hide" 
+                        sum="Total Marge prévisionnel" readonly="1"/>
                     <field name="marged_sales" 
-                        widget="monetary"  optional="hide" readonly="1"/>
+                        widget="monetary"  optional="hide" 
+                        sum="Total CA réaliser" readonly="1"/>
                     <field name="projected_sales_realize" 
-                        widget="monetary"  optional="hide" readonly="1"/>
+                        widget="monetary"  optional="hide" sum="Total CA réaliser" readonly="1"/>
                     <field name="employee_real_cost" 
-                        widget="monetary"  optional="hide" readonly="1"/>
+                        widget="monetary" sum="Total Coût réel de l'employée"  optional="hide" readonly="1"/>
                     <field name="marged_realize" 
-                        widget="monetary"  optional="hide" readonly="1"/>
+                        widget="monetary"  optional="hide" 
+                        sum="Total Marge réaliser" readonly="1"/>
                     <field name="margin_difference" 
-                        widget="monetary"  optional="hide" readonly="1"/>
+                        widget="monetary"  sum="Total Différence de marge" optional="hide" readonly="1"/>
+                    <field name="currency_id" column_invisible="True"/>
                     <field name="id" optional="hide" options="{'enable_formatting': False}"/>
                 </list>
             </field>

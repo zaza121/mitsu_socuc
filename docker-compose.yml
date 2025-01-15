@@ -5,7 +5,7 @@ services:
       - db
     ports:
       - "8069:8069"
-    # user: root
+    #user: root
     volumes:
       - odoo-web-data:/var/lib/odoo
       - ./config:/etc/odoo
@@ -17,7 +17,7 @@ services:
       - postgresql_password
   db:
     image: postgres:16
-    # user: root
+    #user: root
     environment:
       - POSTGRES_DB=postgres
       - POSTGRES_PASSWORD_FILE=/run/secrets/postgresql_password

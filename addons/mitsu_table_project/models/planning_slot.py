@@ -20,6 +20,10 @@ class ResPartnerContact(models.Model):
     employee_real_cost = fields.Float(_("Coût réel de l'employée"),compute="_compute_employee_real_cost")
     marged_realize = fields.Float(_("Marge réaliser"),compute="_compute_marged_realize")
     margin_difference = fields.Float(_("Différence de marge"),compute="_compute_margin_difference")
+    currency_id = fields.Many2one(
+        related='sale_line_id.currency_id',
+        store=True, precompute=True)
+    date_start = fields.Date(string='Date', related='project_id.date_start')
 
     @api.depends('sale_line_id')
     def _compute_quantity_table(self):
