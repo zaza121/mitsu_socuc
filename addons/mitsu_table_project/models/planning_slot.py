@@ -9,16 +9,16 @@ class ResPartnerContact(models.Model):
     price_unit_table = fields.Float(_("Prix Unitaire"), compute="_compute_price_unit_table")
     time_task_table = fields.Float(_("Temps sur la tâche"), compute="_compute_time_task_table")
     time_to_plan  = fields.Float(_("Temps à planifier"), compute="_compute_time_to_plan")
-    time_to_realize = fields.Float(_("Temps réaliser"), compute="_compute_time_to_realize")
+    time_to_realize = fields.Float(_("Temps réalisé"), compute="_compute_time_to_realize")
     time_to_realize_effective = fields.Float(_("Temps à réaliser"), 
         compute="_compute_time_to_realize_effective" )
-    hourly_cost_table = fields.Float(_("Coût unitaire de l'employée"),compute="_compute_hourly_cost")
-    employee_cost_total_task = fields.Float(_("Coût total de l'employée"),compute="_compute_employee_cost_total_task")
+    hourly_cost_table = fields.Float(_("Coût unitaire de l'employé"),compute="_compute_hourly_cost")
+    employee_cost_total_task = fields.Float(_("Coût total de l'employé"),compute="_compute_employee_cost_total_task")
     projected_sales = fields.Float(_("CA prévisionnel"),compute="_compute_projected_sales")
-    marged_sales = fields.Float(_("Marge prévisionnel"),compute="_compute_marged_sales")
-    projected_sales_realize = fields.Float(_("CA réaliser"),compute="_compute_projected_sales_realize")
-    employee_real_cost = fields.Float(_("Coût réel de l'employée"),compute="_compute_employee_real_cost")
-    marged_realize = fields.Float(_("Marge réaliser"),compute="_compute_marged_realize")
+    marged_sales = fields.Float(_("Marge prévisionnelle"),compute="_compute_marged_sales")
+    projected_sales_realize = fields.Float(_("CA réalisé"),compute="_compute_projected_sales_realize")
+    employee_real_cost = fields.Float(_("Coût réel de l'employé"),compute="_compute_employee_real_cost")
+    marged_realize = fields.Float(_("Marge réalisée"),compute="_compute_marged_realize")
     margin_difference = fields.Float(_("Différence de marge"),compute="_compute_margin_difference")
     currency_id = fields.Many2one(
         related='sale_line_id.currency_id',
@@ -75,10 +75,10 @@ class ResPartnerContact(models.Model):
         for rec in self:
             rec.marged_sales = rec.projected_sales - rec.employee_cost_total_task
 
-    @api.depends('employee_id')
+    @api.depends('sale_line_id')
     def _compute_projected_sales_realize(self):
         for rec in self:
-            rec.projected_sales_realize = rec.hourly_cost_table * rec.time_to_realize_effective
+            rec.projected_sales_realize = rec.sale_line_id.qty_invoiced * rec.sale_line_id.price_unit
 
     @api.depends('employee_id')
     def _compute_employee_real_cost(self):
