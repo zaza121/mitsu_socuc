@@ -16,7 +16,7 @@ class SaleOrderLine(models.Model):
         string='Force Modele analytique',
     )
 
-    @api.onchange('role_id', 'product_uom')
+    @api.onchange('role_id', 'product_uom', 'product_uom_qty')
     def _onchange_role_id(self):
         if self.role_id and self.product_uom:
             line = self.role_id.cost_ids.filtered(lambda x: x.uom_id.id == self.product_uom.id)
