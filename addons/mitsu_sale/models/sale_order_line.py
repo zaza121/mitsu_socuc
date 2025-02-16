@@ -63,9 +63,9 @@ class SaleOrderLine(models.Model):
         for rec in self:
             if rec.project_id and rec.project_id.account_id:
                 account = rec.project_id.account_id
-                ana_lines = rec.analytic_distribution.keys()
+                ana_lines =  rec.analytic_distribution and rec.analytic_distribution.keys() or []
                 found_in = [k for k in ana_lines if f"{account.id}" in k]
                 if not found_in:
-                    gop = rec.analytic_distribution
+                    gop = rec.analytic_distribution or {}
                     gop.update({f"{account.id}": 100})
                     rec.analytic_distribution = gop
