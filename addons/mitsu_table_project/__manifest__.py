@@ -6,10 +6,11 @@
     'category': 'Porject',
     'author': 'MITSU',
     'sequence' : -100,
-    'depends': ['mitsu_planning'],
+    'depends': ['mitsu_planning', 'mitsu_hr'],
     'data': [
-        #'security/ir.model.access.csv',
+        'security/ir.model.access.csv',
         'views/planning_slot_view.xml',
+        'views/reportpla_views.xml',
        
     ],
     'application' : True,
