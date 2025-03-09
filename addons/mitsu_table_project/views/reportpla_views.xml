@@ -36,7 +36,6 @@
                 <field name="marged_sales" 
                     widget="monetary"  optional="hide" 
                     sum="Total CA réaliser" readonly="1"/>
-                <field name="boni_mali" optional="hide" decoration-success="boni_mali == 'bon'" decoration-danger="boni_mali == 'mal'" readonly="1"/>
                 <field name="projected_sales_realize" 
                     widget="monetary"  optional="hide" sum="Total CA réaliser" readonly="1"/>
                 <field name="employee_real_cost" 
@@ -44,6 +43,7 @@
                 <field name="marged_realize" 
                     widget="monetary"  optional="hide" 
                     sum="Total Marge réaliser" readonly="1"/>
+                <field name="boni_mali" optional="hide" decoration-success="boni_mali == 'bon'" decoration-danger="boni_mali == 'mal'" readonly="1"/>
                 <field name="margin_difference" 
                     widget="monetary"  sum="Total Différence de marge" optional="hide" readonly="1"/>
                 <field name="currency_id" column_invisible="True"/>

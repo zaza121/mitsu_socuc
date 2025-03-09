@@ -93,7 +93,7 @@ class ReportPla(models.Model):
                 ps.project_id,
                 MIN(ps.start_datetime) AS start_datetime,
                 MIN(ps.end_datetime) AS end_datetime,
-                MIN(ps.allocated_hours) AS allocated_hours,
+                SUM(ps.allocated_hours) AS allocated_hours,
                 MIN(ps.create_date) AS create_date,
                 MIN(sol.price_unit) AS price_unit_table,
                 MIN(sol.product_uom_qty) AS quantity_table,
@@ -165,15 +165,19 @@ class ReportPla(models.Model):
     @api.depends('employee_id')
     def _compute_employee_cost_total_task(self):
         for rec in self:
-            rec.employee_cost_total_task = rec.time_task_table * rec.hourly_cost_table
-            rec.projected_sales = rec.price_unit_table * rec.time_task_table
-            rec.marged_sales = rec.projected_sales - rec.employee_cost_total_task
-            rec.employee_real_cost = rec.hourly_cost_table * rec.time_to_realize
-            rec.marged_realize = rec.employee_real_cost - rec.projected_sales_realize
-            rec.margin_difference = rec.projected_sales_realize - rec.employee_real_cost - rec.marged_sales
+            employee_real_cost = rec.hourly_cost_table * rec.time_to_realize
+            projected_sales = rec.price_unit_table * rec.time_task_table
+            employee_cost_total_task = rec.time_task_table * rec.hourly_cost_table
+
+            rec.employee_cost_total_task = employee_cost_total_task
+            rec.projected_sales = projected_sales
+            rec.marged_sales = projected_sales - employee_cost_total_task
+            rec.employee_real_cost = employee_real_cost
+            rec.marged_realize = employee_real_cost - rec.projected_sales_realize
+            rec.margin_difference = rec.projected_sales_realize - employee_real_cost - (projected_sales - employee_cost_total_task)
             # rec.manager_ids = rec.mapped("employee_id.equipe_ids.manager_id")
             rec.manager_ids = False
-            rec.boni_mali = "bon" if rec.marged_realize > 0 else "mal"
+            rec.boni_mali = "bon" if (employee_real_cost - rec.projected_sales_realize) >= 0 else "mal"
 
     @api.depends('sale_line_id')
     def _compute_projected_sales_realize(self):
