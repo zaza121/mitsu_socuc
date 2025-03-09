@@ -9,6 +9,10 @@ etc/odoo-server.log
 etc/addons/
 etc/sessions/
 etc/filestore/
+config/odoo-server.log
+config/addons/
+config/sessions/
+config/filestore/
 tags/
 odoo-17.0/
 
