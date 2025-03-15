@@ -59,6 +59,7 @@
             <search>
                 <field name="resource_id" groups="planning.group_planning_user"/>
                 <field name="role_id" groups="planning.group_planning_user"/>
+                <field name="project_id" string="Projet"/>
                 <field name="company_id" groups="base.group_multi_company"/>
                 <field name="department_id" groups="planning.group_planning_user"/>
                 <field name="manager_id" groups="planning.group_planning_user"/>

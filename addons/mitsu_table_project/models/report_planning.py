@@ -49,7 +49,7 @@ class ReportPla(models.Model):
     employee_cost_total_task = fields.Float(_("Coût total de l'employé"),compute="_compute_employee_cost_total_task")
     projected_sales = fields.Float(_("CA prévisionnel"),compute="_compute_employee_cost_total_task")
     marged_sales = fields.Float(_("Marge prévisionnelle"),compute="_compute_employee_cost_total_task")
-    projected_sales_realize = fields.Float(_("CA réalisé"),compute="_compute_projected_sales_realize")
+    projected_sales_realize = fields.Float(_("CA réalisé"),compute="_compute_time_to_realize_effective")
     employee_real_cost = fields.Float("Coût réel de l'employé", compute="_compute_employee_cost_total_task")
     marged_realize = fields.Float(_("Marge réalisée"),compute="_compute_employee_cost_total_task")
     margin_difference = fields.Float(_("Différence de marge"),compute="_compute_employee_cost_total_task")
@@ -69,10 +69,13 @@ class ReportPla(models.Model):
         members = equipe_manager.mapped('employee_ids')
         return [('employee_id', 'in', members.ids)]
 
-    @api.depends('task_id')
+    @api.depends('task_id', 'project_id')
     def _compute_time_to_realize_effective(self):
         for rec in self:
+            timesheet = rec.project_id and rec.project_id.timesheet_ids or False
+            inv_sheet = timesheet and timesheet.filtered(lambda x: x.task_id == rec.task_id and x.employee_id == rec.employee_id and x.timesheet_invoice_id) or False
             rec.time_to_realize_effective = rec.allocated_hours - rec.time_to_realize
+            rec.projected_sales_realize = inv_sheet and sum(inv_sheet.mapped('unit_amount')) * rec.sale_line_id.price_unit or 0
 
     def _select(self):
         return """
@@ -178,8 +181,3 @@ class ReportPla(models.Model):
             # rec.manager_ids = rec.mapped("employee_id.equipe_ids.manager_id")
             rec.manager_ids = False
             rec.boni_mali = "bon" if (employee_real_cost - rec.projected_sales_realize) >= 0 else "mal"
-
-    @api.depends('sale_line_id')
-    def _compute_projected_sales_realize(self):
-        for rec in self:
-            rec.projected_sales_realize = rec.sale_line_id.qty_invoiced * rec.sale_line_id.price_unit
