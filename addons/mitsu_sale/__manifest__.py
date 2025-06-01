@@ -16,6 +16,9 @@
         'views/sale_order_views.xml',
         'views/planning_role_views.xml',
         'views/analytic_distribution_model_views.xml',
+        'views/project_project_views.xml',
+        'views/project_temp_task_views.xml',
+        'views/product_template_views.xml',
         #security
         'security/ir.model.access.csv',
         # 'report/account_invoice_report_views.xml',

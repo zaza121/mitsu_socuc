@@ -58,6 +58,29 @@ class SaleOrderLine(models.Model):
                 res[_fie.name] = map_fields_plan.get(_fie.name, None)
         return res
 
+    def _timesheet_service_generation(self):
+        res = super()._timesheet_service_generation()
+
+        for rec in self:
+
+            task_obj = self.env["project.task"]
+            if rec.product_id.service_tracking == 'project_only':
+                name_task = rec.product_id.mapped("temp_task_ids.name")
+                for _name in name_task:
+                    values = {
+                        'name': _name,
+                        # 'allocated_hours': rec._convert_qty_company_hours(rec.company_id),
+                        'partner_id': rec.order_id.partner_id.id,
+                        'description': '<br/>'.join(rec.name.split('\n')),
+                        'project_id': rec.project_id.id,
+                        'sale_line_id': rec.id,
+                        'sale_order_id': rec.order_id.id,
+                        'company_id': rec.company_id.id,
+                        'user_ids': False,  # force non assigned task, as created as sudo()
+                    }
+                    # raise Warning(values)
+                    task_obj.create(values)
+
     @api.constrains("order_id.project_id", 'state')
     def get_project_account_id(self):
         for rec in self:
