@@ -13,7 +13,7 @@ class SaleOrderLine(models.Model):
     )
     force_modele_id = fields.Many2one(
         comodel_name='account.analytic.distribution.model',
-        string='Force Modele analytique',
+        string='Modele analytique',
     )
 
     @api.onchange('role_id', 'product_uom', 'product_uom_qty')

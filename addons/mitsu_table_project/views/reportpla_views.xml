@@ -129,7 +129,7 @@
     </record>
 
     <menuitem id="menu_main_pm_report_pla"
-              name="Rapport 2"
+              name="Rapport d'activité Projet"
               parent="project.menu_main_pm"
               action="action_reportpla_mutsi_view"
               sequence="13"/>

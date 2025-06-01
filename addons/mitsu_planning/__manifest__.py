@@ -16,8 +16,6 @@
         # views
         'views/planning_slot_views.xml',
         'views/planning_role_views.xml',
-        # 'report/account_invoice_report_views.xml',
-        # 'report/sale_report_views.xml',
     ],
     'images': ['static/description/banner.jpg'],
     'license': "AGPL-3",

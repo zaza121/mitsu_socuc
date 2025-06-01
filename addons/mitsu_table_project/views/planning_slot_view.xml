@@ -64,9 +64,9 @@
             <field name="act_window_id" ref="action_planning_slot_mutsi"/>
         </record>
 
-        <menuitem id="menu_planning_table_task1"
+        <!-- <menuitem id="menu_planning_table_task1"
                   name="Rapport"
                   parent="project.menu_main_pm"
                   action="mitsu_table_project.action_planning_slot_mutsi"
-                  sequence="3"/>
+                  sequence="3"/> -->
 </odoo>
