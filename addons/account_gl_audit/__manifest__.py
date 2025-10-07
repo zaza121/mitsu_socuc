@@ -3,7 +3,7 @@
     "version": "18.0.1.0.0",
     "summary": "Audit Grand Livre SYSCOHADA avec périodes, classes de comptes et export Excel",
     "category": "Sales/Project",
-    "author": "Custom Dev",
+    "author": "Mitsuki technologies",
     "depends": ["account"],
     "data": [
         "security/ir.model.access.csv",
