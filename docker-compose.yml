@@ -12,7 +12,9 @@ services:
       - ./addons:/mnt/extra-addons
       - ./enterprise:/mnt/enterprise-addons
     environment:
-      - PASSWORD_FILE=/run/secrets/postgresql_password
+      - HOST=db
+      - USER=odoo
+      - PASSWORD=/run/secrets/postgresql_password
     secrets:
       - postgresql_password
   db:
