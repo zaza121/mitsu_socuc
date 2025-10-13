@@ -15,7 +15,7 @@ class hrEquipe(models.Model):
     )
     extra_employee_ids = fields.Many2many(
         comodel_name='hr.employee',
-        string='Extra Employes',
+        string='Autre(s) Employes',
         relation="equipe_to_extra_emp",
     )
     employee_ids = fields.Many2many(

@@ -16,7 +16,7 @@
             </xpath>
 
             <xpath expr="//field[@name='sale_line_id']/.." position="after">
-                <field name="task_id" domain="[('sale_line_id', '=', sale_line_id)]" />
+                <field name="task_id" domain="[('project_id', '=', project_id),('sale_line_id', '=', sale_line_id),('user_ids', 'in', user_id)]"/>
             </xpath>
 
             <xpath expr="//header[1]" position="inside">

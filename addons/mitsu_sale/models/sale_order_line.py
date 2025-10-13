@@ -13,10 +13,10 @@ class SaleOrderLine(models.Model):
     )
     force_modele_id = fields.Many2one(
         comodel_name='account.analytic.distribution.model',
-        string='Force Modele analytique',
+        string='Modele analytique',
     )
 
-    @api.onchange('role_id', 'product_uom')
+    @api.onchange('role_id', 'product_uom', 'product_uom_qty')
     def _onchange_role_id(self):
         if self.role_id and self.product_uom:
             line = self.role_id.cost_ids.filtered(lambda x: x.uom_id.id == self.product_uom.id)
@@ -58,14 +58,37 @@ class SaleOrderLine(models.Model):
                 res[_fie.name] = map_fields_plan.get(_fie.name, None)
         return res
 
+    def _timesheet_service_generation(self):
+        res = super()._timesheet_service_generation()
+
+        for rec in self:
+
+            task_obj = self.env["project.task"]
+            if rec.product_id.service_tracking == 'project_only':
+                name_task = rec.product_id.mapped("temp_task_ids.name")
+                for _name in name_task:
+                    values = {
+                        'name': _name,
+                        # 'allocated_hours': rec._convert_qty_company_hours(rec.company_id),
+                        'partner_id': rec.order_id.partner_id.id,
+                        'description': '<br/>'.join(rec.name.split('\n')),
+                        'project_id': rec.project_id.id,
+                        'sale_line_id': rec.id,
+                        'sale_order_id': rec.order_id.id,
+                        'company_id': rec.company_id.id,
+                        'user_ids': False,  # force non assigned task, as created as sudo()
+                    }
+                    # raise Warning(values)
+                    task_obj.create(values)
+
     @api.constrains("order_id.project_id", 'state')
     def get_project_account_id(self):
         for rec in self:
             if rec.project_id and rec.project_id.account_id:
                 account = rec.project_id.account_id
-                ana_lines = rec.analytic_distribution.keys()
+                ana_lines =  rec.analytic_distribution and rec.analytic_distribution.keys() or []
                 found_in = [k for k in ana_lines if f"{account.id}" in k]
                 if not found_in:
-                    gop = rec.analytic_distribution
+                    gop = rec.analytic_distribution or {}
                     gop.update({f"{account.id}": 100})
                     rec.analytic_distribution = gop
