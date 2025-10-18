@@ -15,8 +15,6 @@ services:
       - HOST=db
       - USER=odoo
       - PASSWORD=odoo18@2022
-    secrets:
-      - postgresql_password
   db:
     image: postgres:16
     #user: root
@@ -29,8 +27,6 @@ services:
       - odoo-db-data:/var/lib/postgresql/data/pgdata
     ports:
       - "5438:5432"
-    secrets:
-      - postgresql_password
 volumes:
   odoo-web-data:
   odoo-db-data:
