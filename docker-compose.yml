@@ -14,7 +14,7 @@ services:
     environment:
       - HOST=db
       - USER=odoo
-      - PASSWORD=/run/secrets/postgresql_password
+      - PASSWORD=odoo18@2022
     secrets:
       - postgresql_password
   db:
@@ -22,7 +22,7 @@ services:
     #user: root
     environment:
       - POSTGRES_DB=postgres
-      - POSTGRES_PASSWORD_FILE=/run/secrets/postgresql_password
+      - POSTGRES_PASSWORD_FILE=odoo18@2022
       - POSTGRES_USER=odoo
       - PGDATA=/var/lib/postgresql/data/pgdata
     volumes:
@@ -34,8 +34,4 @@ services:
 volumes:
   odoo-web-data:
   odoo-db-data:
-
-secrets:
-  postgresql_password:
-    file: ./odoo_pg_pass
  
