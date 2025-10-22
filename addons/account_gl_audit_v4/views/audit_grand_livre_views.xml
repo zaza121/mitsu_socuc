@@ -25,10 +25,8 @@
                     <button string="Mois courant" type="object" name="audit_mois_courant"/>
                     <button string="Trimestre courant" type="object" name="audit_trimestre_courant"/>
                     <button string="Année courante" type="object" name="audit_annee_courante"/>
-                    
                     <button string="Exporter Excel" type="object" name="export_to_excel"
                             invisible="not export_file"/>
-                            
                 </header>
                 <sheet>
                     <group string="Paramètres">
@@ -47,8 +45,9 @@
                         <field name="export_file" filename="export_filename"
                                 readonly="1" invisible="not export_file"/>
                         <field name="export_filename" invisible="1"/>
+                        
                         <field name="type_anomalie" readonly="1"
-                                attrs="{'invisible': [('type_anomalie', '=', False)]}"/>
+                                invisible="not type_anomalie"/>
                     </group>
                 </sheet>
             </form>
