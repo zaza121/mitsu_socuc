@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+<!-- Tree view pour afficher les anomalies (résultats) -->
+<record id="view_audit_grand_livre_tree" model="ir.ui.view">
+<field name="name">audit.grand.livre.tree</field>
+<field name="model">audit.grand.livre</field>
+<field name="arch" type="xml">
+<tree string="Anomalies du Grand Livre PCG" decoration-info="not compte">
+<field name="date"/>
+<field name="compte"/>
+<field name="intitule"/>
+<field name="debit" sum="Total Débit"/>
+<field name="credit" sum="Total Crédit"/>
+<field name="type_anomalie"/>
+</tree>
+</field>
+</record>
+
+<!-- Form view pour saisir les paramètres (WIZARD) -->
+<record id="view_audit_grand_livre_form" model="ir.ui.view">
+    <field name="name">audit.grand.livre.form</field>
+    <field name="model">audit.grand.livre</field>
+    <field name="arch" type="xml">
+        <form string="Audit Grand Livre PCG">
+            <header>
+                <button string="Lancer l'audit" type="object" name="action_run_audit" class="oe_highlight" 
+                        help="Lance la détection d'anomalies PCG sur la période et les comptes sélectionnés. Les résultats s'afficheront dans une nouvelle fenêtre."/>
+                <button string="Mois Courant" type="object" name="audit_mois_courant" class="btn-secondary" 
+                        help="Règle la période au mois courant et met à jour les dates"/>
+                <button string="Trimestre Courant" type="object" name="audit_trimestre_courant" class="btn-secondary" 
+                        help="Règle la période au trimestre courant et met à jour les dates"/>
+                <button string="Année Courante" type="object" name="audit_annee_courante" class="btn-secondary" 
+                        help="Règle la période à l'année courante et met à jour les dates"/>
+                <button string="Exporter Excel" type="object" name="export_to_excel" attrs="{'invisible': [('export_file', '=', False)]}"/>
+            </header>
+            <sheet>
+                <group string="Paramètres de l'Audit">
+                    <group>
+                        <field name="date_debut"/>
+                        <field name="date_fin"/>
+                    </group>
+                    <group>
+                        <field name="classes_comptes" 
+                                options="{'no_create': True, 'no_edit': True}" 
+                                placeholder="Laissez vide pour auditer tous les comptes (PCG 1 à 7)"/>
+                    </group>
+                </group>
+                
+                <separator string="Résultats et Téléchargement"/>
+                <group>
+                    <!-- Le champ de téléchargement est visible après l'exécution de l'export -->
+                    <field name="export_file" filename="export_filename" 
+                            readonly="1" invisible="not export_file"/>
+                    <field name="export_filename" invisible="1"/>
+                </group>
+            </sheet>
+        </form>
+   </field>
+</record>
+
+<!-- Action principale -->
+<record id="view_audit_grand_livre_action" model="ir.actions.act_window">
+    <field name="name">Audit Grand Livre PCG</field>
+    <field name="res_model">audit.grand.livre</field>
+    <field name="view_mode">tree,form</field>
+    <field name="target">new</field> <!-- Ouvre le formulaire de saisie des paramètres en mode Wizard -->
+</record>
+
+<!-- Menu -->
+<menuitem id="menu_audit_grand_livre_root" name="Audit Comptable" sequence="10" web_icon="account_gl_audit,static/description/icon.png"/>
+<menuitem id="menu_audit_grand_livre" name="Grand Livre PCG Français" parent="menu_audit_grand_livre_root"
+          action="view_audit_grand_livre_action" sequence="10"/>
+
+</odoo>

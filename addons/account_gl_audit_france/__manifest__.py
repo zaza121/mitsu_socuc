@@ -1,0 +1,2 @@
+# -*- coding: utf-8 -*-
+{"name": "Audit Grand Livre PCG Français (Optimisé)","version": "1.1.0","category": "Accounting","summary": "Audit Grand Livre PCG Français avec détection des soldes anormaux par classe de compte et export Excel, optimisé pour gros volumes.","depends": ["account"],"author": "MITSUKI TECHNOLOGIE CONSEIL","data": ["views/audit_grand_livre_views.xml",],"installable": True,"application": True,"license": "LGPL-3",}
