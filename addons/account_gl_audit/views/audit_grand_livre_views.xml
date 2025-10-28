@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Vue Formulaire (Paramètres du Wizard) -->
+        <record id="view_audit_grand_livre_form" model="ir.ui.view">
+            <field name="name">audit.grand.livre.form</field>
+            <field name="model">audit.grand.livre</field>
+            <field name="arch" type="xml">
+                <form string="Audit Grand Livre PCG Français">
+                    <header>
+                        <button name="action_run_audit" string="Lancer l'Audit" type="object" class="oe_highlight"/>
+                        <button name="export_to_excel" string="Exporter en Excel" type="object" 
+                                attrs="{'invisible': [('export_file', '=', False)]}"/>
+                    </header>
+                    <sheet>
+                        <group string="Période et Comptes à Auditer">
+                            <group>
+                                <field name="date_debut"/>
+                                <field name="date_fin"/>
+                            </group>
+                            <group>
+                                <button name="audit_mois_courant" string="Mois Courant" type="object" class="btn btn-secondary"/>
+                                <button name="audit_trimestre_courant" string="Trimestre Courant" type="object" class="btn btn-secondary"/>
+                                <button name="audit_annee_courante" string="Année Courante" type="object" class="btn btn-secondary"/>
+                            </group>
+                        </group>
+                        <field name="classes_comptes" placeholder="Laisser vide pour auditer tous les comptes (Classes 1 à 7)"/>
+                        
+                        <separator string="Téléchargement des Résultats"/>
+                        <group attrs="{'invisible': [('export_file', '=', False)]}">
+                            <field name="export_filename" invisible="1"/>
+                            <field name="export_file" filename="export_filename" readonly="1" string="Fichier d'anomalies"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!-- Vue Liste (Résultats de l'Audit) -->
+        <record id="view_audit_grand_livre_tree" model="ir.ui.view">
+            <field name="name">audit.grand.livre.tree</field>
+            <field name="model">audit.grand.livre</field>
+            <field name="arch" type="xml">
+                <tree string="Résultats de l'Audit" create="0" delete="0" edit="0" default_order="date desc">
+                    <field name="date"/>
+                    <field name="compte"/>
+                    <field name="intitule"/>
+                    <field name="debit" sum="Total Débit"/>
+                    <field name="credit" sum="Total Crédit"/>
+                    <field name="currency_id" invisible="1"/>
+                    <field name="type_anomalie"/>
+                </tree>
+            </field>
+        </record>
+        <!-- Action d'Ouverture du Wizard -->
+        <record id="view_audit_grand_livre_action" model="ir.actions.act_window">
+            <field name="name">Audit Grand Livre PCG Français</field>
+            <field name="res_model">audit.grand.livre</field>
+            <field name="view_mode">form,tree</field>
+            <field name="target">new</field> <!-- Ouvre le formulaire en mode Wizard -->
+        </record>
+        <!-- Menu -->
+        <menuitem id="menu_audit_grand_livre_root" 
+                  name="Audit Comptable" 
+                  sequence="10" 
+                  web_icon="account_gl_audit,static/description/icon.png"
+                  groups="account.group_account_user"/> <!-- Assure la visibilité par le groupe Comptable -->
+        <menuitem id="menu_audit_grand_livre" 
+                  name="Grand Livre PCG Français" 
+                  parent="menu_audit_grand_livre_root"
+                  action="view_audit_grand_livre_action" 
+                  sequence="10"/>
+    </data>
+</odoo>
