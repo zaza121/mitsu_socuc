@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+<record id="view_role_pricing_tree" model="ir.ui.view">
+<field name="name">role.pricing.tree</field>
+<field name="model">role.pricing</field>
+<field name="arch" type="xml">
+<tree>
+<field name="role_id"/>
+<field name="uom_id"/>
+<field name="price"/>
+<field name="company_id"/>
+</tree>
+</field>
+</record>
+
+<record id="view_role_pricing_form" model="ir.ui.view">
+<field name="name">role.pricing.form</field>
+<field name="model">role.pricing</field>
+<field name="arch" type="xml">
+<form>
+<sheet>
+<group>
+<field name="role_id"/>
+<field name="uom_id"/>
+<field name="price"/>
+<field name="company_id"/>
+</group>
+</sheet>
+</form>
+</field>
+</record>
+
+<record id="action_role_pricing" model="ir.actions.act_window">
+<field name="name">Role Pricing</field>
+<field name="res_model">role.pricing</field>
+<field name="view_mode">tree,form</field>
+</record>
+
+<menuitem id="menu_hr_billing_root" name="HR Billing" sequence="90"/>
+<menuitem id="menu_role_pricing" name="Role Pricing" parent="menu_hr_billing_root" action="action_role_pricing"/>
+</odoo>

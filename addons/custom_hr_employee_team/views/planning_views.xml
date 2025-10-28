@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="planning_view_search_inherit_team" model="ir.ui.view">
+        <field name="name">planning.slot.search.inherit.team</field>
+        <field name="model">planning.slot</field>
+        <field name="inherit_id" ref="planning.planning_view_search"/>
+        <field name="arch" type="xml">
+            <field name="resource_id" position="after">
+                <field name="employee_team_id" string="Équipe"/>
+            </field>
+            <filter name="group_by_resource" position="after">
+                <filter string="Mes équipes" name="my_teams"
+                        domain="[('employee_id.team_ids.team_leader_id.user_id', '=', uid)]"/>
+                <filter string="Équipe" name="group_by_team" context="{'group_by': 'employee_team_id'}"/>
+            </filter>
+        </field>
+    </record>
+</odoo>
