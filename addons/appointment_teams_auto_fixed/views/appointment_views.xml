@@ -1,0 +1,30 @@
+<odoo>
+    <record id="view_appointment_type_form_inherit_teams" model="ir.ui.view">
+        <field name="name">appointment.type.form.inherit.teams.auto</field>
+        <field name="model">appointment.type</field>
+        <field name="inherit_id" ref="calendar_appointment.appointment_type_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='category']" position="after">
+                <field name="teams_enabled"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_calendar_event_form_inherit_teams" model="ir.ui.view">
+        <field name="name">calendar.event.form.inherit.teams.auto</field>
+        <field name="model">calendar.event</field>
+        <field name="inherit_id" ref="calendar.view_calendar_event_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='user_id']" position="after">
+                <field name="teams_meeting_url" readonly="1" widget="url" 
+                       attrs="{'invisible': [('teams_meeting_url', '=', False)]}"/>
+            </xpath>
+            
+             <xpath expr="//button[@name='action_cancel']" position="before">
+                <button name="action_open_teams_link" string="Ouvrir Réunion Teams" type="object" 
+                        icon="fa-video-camera" 
+                        attrs="{'invisible': [('teams_meeting_url', '=', False)]}"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

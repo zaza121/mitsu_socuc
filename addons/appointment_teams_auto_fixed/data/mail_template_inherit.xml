@@ -1,0 +1,17 @@
+<odoo>
+    <record id="appointment_mail_template_confirmation_inherit_teams_auto" model="ir.ui.view">
+        <field name="name">appointment.mail.template.confirmation.inherit.teams.auto</field>
+        <field name="model">mail.template</field>
+        <field name="inherit_id" ref="calendar_appointment.calendar_event_template_meeting_invitation"/>
+        <field name="arch" type="xml">
+            <xpath expr="//p[@t-if='o_calendar_event.location']" position="after">
+                <p t-if="o_calendar_event.teams_meeting_url">
+                    <strong>Lien de Réunion Microsoft Teams :</strong>
+                    <a t-att-href="o_calendar_event.teams_meeting_url" target="_blank">
+                        <t t-esc="o_calendar_event.teams_meeting_url"/>
+                    </a>
+                </p>
+            </xpath>
+        </field>
+    </record>
+</odoo>
