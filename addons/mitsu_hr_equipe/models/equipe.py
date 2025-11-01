@@ -6,19 +6,30 @@ class MitsuHrEquipe(models.Model):
     _name = 'mitsu_hr.equipe'
     _description = "Equipe Mitsu HR"
     _rec_name = "name"
+    _order = "sequence, name" # Ajout de l'ordre par défaut pour la vue tree
 
     name = fields.Char(string='Nom', required=True)
     sequence = fields.Integer(string='Sequence', default=10)
+    
+    # Le champ manager_id a été déplacé ici pour assurer qu'il est chargé correctement 
+    # avant que la vue XML ne le demande, évitant ainsi le "TypeError".
+    manager_id = fields.Many2one(
+        comodel_name='res.users',
+        string='Manager'
+    )
+    
     departments_ids = fields.Many2many(
         comodel_name='hr.department',
         string='Départements',
         relation="equipe_to_depart"
     )
+    
     extra_employee_ids = fields.Many2many(
         comodel_name='hr.employee',
         string='Autre(s) Employés',
         relation="equipe_to_extra_emp",
     )
+    
     # employee_ids calculé : membres des départements + extra_employee_ids
     employee_ids = fields.Many2many(
         comodel_name='hr.employee',
@@ -33,10 +44,6 @@ class MitsuHrEquipe(models.Model):
         string='Resources',
         compute="_compute_employee_ids",
         store=True,
-    )
-    manager_id = fields.Many2one(
-        comodel_name='res.users',
-        string='Manager'
     )
 
     @api.depends('departments_ids.member_ids', 'extra_employee_ids')

@@ -27,11 +27,6 @@
         </field>
     </record>
 
-    <!-- 
-    NOUVELLE CORRECTION : 
-    Retrait du champ <field name="type">tree</field> pour laisser Odoo déduire le type 
-    via la balise racine <tree>, ce qui est la méthode standard et évite les conflits de validation.
-    -->
     <record id="view_equipe_tree" model="ir.ui.view">
         <field name="name">mitsu_hr.equipe.list</field>
         <field name="model">mitsu_hr.equipe</field>
