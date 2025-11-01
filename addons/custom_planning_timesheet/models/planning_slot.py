@@ -7,7 +7,7 @@ class PlanningSlot(models.Model):
     project_id = fields.Many2one('project.project', string="Projet")
     task_id = fields.Many2one('project.task', string="Tâche")
     role_id = fields.Many2one('hr.job', string="Rôle")
-    sale_line_name = fields.Char(related='sale_line_id.name', string="Article de BC", store=False)
+    # sale_line_name = fields.Char(related='sale_line_id.name', string="Article de BC", store=False)  # ← SUPPRIMÉ
     
     @api.onchange('resource_id')
     def _onchange_resource_filter_role(self):
