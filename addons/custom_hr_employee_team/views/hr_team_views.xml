@@ -1,41 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+    <!-- ========================== -->
+    <!-- LISTE DES ÉQUIPES RH       -->
+    <!-- ========================== -->
     <record id="view_hr_employee_team_tree" model="ir.ui.view">
         <field name="name">hr.employee.team.list</field>
         <field name="model">hr.employee.team</field>
         <field name="arch" type="xml">
-            <list>
+            <list string="Équipes">
                 <field name="name"/>
-                <field name="team_leader_id"/>
-                <field name="member_count"/>
+                <field name="team_leader_id" string="Chef d'équipe"/>
+                <field name="member_count" string="Nombre de membres" widget="integer"/>
             </list>
         </field>
     </record>
-    
+
+    <!-- ========================== -->
+    <!-- FORMULAIRE D'ÉQUIPE RH     -->
+    <!-- ========================== -->
     <record id="view_hr_employee_team_form" model="ir.ui.view">
         <field name="name">hr.employee.team.form</field>
         <field name="model">hr.employee.team</field>
         <field name="arch" type="xml">
-            <form>
+            <form string="Équipe">
                 <sheet>
                     <group>
-                        <field name="name"/>
-                        <field name="team_leader_id"/>
-                        <field name="member_ids" widget="many2many_tags"/>
+                        <group>
+                            <field name="name"/>
+                            <field name="team_leader_id" string="Chef d'équipe"/>
+                        </group>
+                        <group>
+                            <field name="member_ids" widget="many2many_tags" string="Membres"/>
+                        </group>
                     </group>
                 </sheet>
             </form>
         </field>
     </record>
-    
+
+    <!-- ========================== -->
+    <!-- ACTION ET MENU             -->
+    <!-- ========================== -->
     <record id="hr_employee_team_action" model="ir.actions.act_window">
         <field name="name">Équipes</field>
         <field name="res_model">hr.employee.team</field>
         <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p>Gérez les équipes d'employés et leur chef d'équipe ici.</p>
+        </field>
     </record>
-    
+
+    <!-- Menu sous le menu Ressources Humaines -->
     <menuitem id="menu_hr_employee_team"
               name="Équipes"
               parent="hr.menu_hr_root"
-              action="hr_employee_team_action"/>
+              action="hr_employee_team_action"
+              sequence="40"/>
 </odoo>
