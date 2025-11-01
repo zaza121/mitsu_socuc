@@ -1,61 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-  <record id="view_equipe_form" model="ir.ui.view">
-      <field name="name">mitsu_hr.equipe.form</field>
-      <field name="model">mitsu_hr.equipe</field>
-      <field name="arch" type="xml">
-          <form string="Équipe">
-              <header/>
-              <sheet>
-                  <div class="oe_button_box" name="button_box"/>
-                  <div class="oe_title">
-                      <label for="name"/>
-                      <h1><field name="name" options="{'line_breaks': False}" widget="text" placeholder="e.g. Sales Manager"/></h1>
-                  </div>
-                  <group>
-                      <group>
-                          <field name="manager_id" />
-                          <field name="departments_ids" widget="many2many_tags" />
-                          <field name="extra_employee_ids" widget="many2many_tags" />
-                      </group>
-                      <group>
-                          <field name="employee_ids" widget="many2many_tags" />
-                      </group>
-                  </group>
-              </sheet>
-          </form>
-      </field>
-  </record>
+    <record id="view_equipe_form" model="ir.ui.view">
+        <field name="name">mitsu_hr.equipe.form</field>
+        <field name="model">mitsu_hr.equipe</field>
+        <!-- Les vues de formulaire n'ont généralement pas besoin d'un type explicite. -->
+        <field name="arch" type="xml">
+            <form string="Équipe">
+                <header/>
+                <sheet>
+                    <div class="oe_button_box" name="button_box"/>
+                    <div class="oe_title">
+                        <label for="name"/>
+                        <h1><field name="name" options="{'line_breaks': False}" widget="text" placeholder="e.g. Sales Manager"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="manager_id" />
+                            <field name="departments_ids" widget="many2many_tags" />
+                            <field name="extra_employee_ids" widget="many2many_tags" />
+                        </group>
+                        <group>
+                            <field name="employee_ids" widget="many2many_tags" />
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
 
-  <record id="view_equipe_tree" model="ir.ui.view">
-      <field name="name">mitsu_hr.equipe.list</field>
-      <field name="model">mitsu_hr.equipe</field>
-      <field name="arch" type="xml">
-          <tree string="Équipes">
-              <field name="sequence" widget="handle"/>
-              <field name="name"/>
-              <field name="departments_ids" widget="many2many_tags" optional="show" />
-          </tree>
-      </field>
-  </record>
+    <!-- 
+    CORRECTION APPLIQUÉE : Ajout de <field name="type">tree</field> pour prévenir l'erreur de validation.
+    -->
+    <record id="view_equipe_tree" model="ir.ui.view">
+        <field name="name">mitsu_hr.equipe.list</field>
+        <field name="model">mitsu_hr.equipe</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Équipes">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="departments_ids" widget="many2many_tags" optional="show" />
+            </tree>
+        </field>
+    </record>
 
-  <record id="action_equipe" model="ir.actions.act_window">
-      <field name="name">Équipes</field>
-      <field name="res_model">mitsu_hr.equipe</field>
-      <field name="view_mode">tree,form</field>
-      <field name="context">{}</field>
-      <field name="help" type="html">
-        <p class="o_view_nocontent_smiling_face"/>
-        <p>
-          Créez et administrez des équipes.
-        </p>
-      </field>
-  </record>
+    <record id="action_equipe" model="ir.actions.act_window">
+        <field name="name">Équipes</field>
+        <field name="res_model">mitsu_hr.equipe</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face"/>
+            <p>
+                Créez et administrez des équipes.
+            </p>
+        </field>
+    </record>
 
-  <menuitem
-      id="menu_hr_root_equipe"
-      name="Équipes"
-      action="action_equipe"
-      parent="hr.menu_hr_root"
-      sequence="11"/>
+    <menuitem
+        id="menu_hr_root_equipe"
+        name="Équipes"
+        action="action_equipe"
+        parent="hr.menu_hr_root"
+        sequence="11"/>
 </odoo>
