@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record model="ir.actions.act_window" id="action_reportpla">
+		<field name="name">Rapport Planning Projet (Rentabilité)</field>
+		<field name="res_model">mitsu_table_project.reportpla</field>
+		<field name="type">ir.actions.act_window</field>
+		<field name="view_mode">tree,graph,pivot</field>
+	</record>
+
+	<record id="reportpla_tree_view" model="ir.ui.view">
+		<field name="name">mitsu_table_project.reportpla.list</field>
+		<field name="model">mitsu_table_project.reportpla</field>
+		<field name="arch" type="xml">
+			<list string="Tableau planning" sample="1" default_order="id desc">
+				<field name="create_date" string="Date" widget="date" readonly="1" />
+				<field name="employee_id" readonly="1" />
+				<field name="project_id" />
+				<field name="task_id" readonly="1"/>
+				<field name="sale_line_id" readonly="1"/>
+				<field name="price_unit_table"  widget="monetary"  sum="Total Prix Unitaire"
+					readonly="1"/>
+				<field name="quantity_table"  sum="Quantité"
+readonly="1"/>
+				<field name="time_task_table" string="Temps sur la
+tâche"
+					widget="timesheet_uom_no_toggle"  readonly="1"/>
+				<field name="allocated_hours" string="Temps
+planifié"
+					widget="timesheet_uom_no_toggle" readonly="1"/>
+				<field name="time_to_plan" string="Temps à
+planifier"
+					widget="timesheet_uom_no_toggle"  optional="hide"
+readonly="1"/>
+				<field name="time_to_realize" string="Temps
+réalisé"
+					widget="timesheet_uom_no_toggle"  optional="hide"
+readonly="1"/>
+				<field name="hourly_cost_table"
+					widget="monetary" sum="Total Coût Unitaire de l'Employé"
+optional="hide" readonly="1"/>
+				<field name="projected_sales"
+					widget="monetary" optional="hide"
+					sum="Total CA Prévisionnel" readonly="1"/>
+				<field name="marged_sales"
+					widget="monetary" optional="hide"
+					sum="Total Marge Prévisionnelle" readonly="1"/>
+				<field name="projected_sales_realize"
+					widget="monetary" optional="hide" sum="Total CA Réalisé"
+readonly="1"/>
+				<field name="employee_real_cost"
+					widget="monetary"
+sum="Total Coût Réel de l'Employé" optional="hide" readonly="1"/>
+				<field name="marged_realize"
+					widget="monetary" optional="hide"
+					sum="Total Marge Réalisée" readonly="1"/>
+				<field name="boni_mali" optional="hide"
+decoration-success="boni_mali == 'bon'"
+decoration-danger="boni_mali == 'mal'" readonly="1"/>
+				<field name="margin_difference"
+					widget="monetary" sum="Total Différence de Marge" optional="hide"
+readonly="1"/>
+				<field name="currency_id"
+column_invisible="True"/>
+				<field name="id" optional="hide"
+options="{'enable_formatting': False}"/>
+			</list>
+		</field>
+	</record>
+
+	<record id="reportpla_search_view" model="ir.ui.view">
+		<field name="name">mitsu_table_project.reportpla.search</field>
+		<field name="model">mitsu_table_project.reportpla</field>
+		<field name="arch" type="xml">
+			<search>
+				<field name="employee_id" groups="planning.group_planning_user"/>
+				<field name="project_id" string="Projet"/>
+				<field name="company_id" groups="base.group_multi_company"/>
+				<field name="department_id" groups="planning.group_planning_user"/>
+				<field name="manager_id" groups="planning.group_planning_user"/>
+				<field name="name" groups="planning.group_planning_user"/>
+				<separator/>
+				<filter name="unpublished_shifts" string="Brouillon" domain="[('state', '=', 'draft')]" groups="planning.group_planning_manager"/>
+				<filter name="published_shifts" string="Publié" domain="[('state', '=', 'published')]" groups="planning.group_planning_manager"/>
+				<separator groups="planning.group_planning_manager"/>
+				<filter string="Date de Début" name="start_datetime" date="start_datetime" end_month="1">
+					<group expand="0" string="Group By">
+						<filter string="Employé" name="Employee" context="{'group_by':'employee_id'}"/>
+						<filter string="Projet" name="Project" context="{'group_by':'project_id'}"/>
+						<filter string="Tâche" name="Task" context="{'group_by':'task_id'}"/>
+						<filter string="Statut" name="State" context="{'group_by':'state'}"/>
+						<filter string="Mois" name="month" context="{'group_by':'start_datetime:month'}"/>
+						<filter string="Année" name="year" context="{'group_by':'start_datetime:year'}"/>
+					</group>
+				</filter>
+			</search>
+		</field>
+	</record>
+
+	<menuitem id="menu_report_planning_table"
+		name="Rapport Rentabilité Projet"
+		parent="project.menu_main_pm"
+		action="action_reportpla"
+		sequence="3"/>
+</odoo>

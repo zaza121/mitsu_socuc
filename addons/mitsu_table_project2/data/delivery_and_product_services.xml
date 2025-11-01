@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data noupdate="0">
+		<record id="product_delivery_edea_3x" model="product.template">
+			<field name="name">Frais Livraison Edéa / 32T 3X</field>
+			<field name="list_price">3089036</field>
+			<field name="standard_price">3089036</field>
+			<field name="type">service</field>
+			<field name="sale_ok">0</field>
+			<field name="purchase_ok">0</field>
+			<field name="default_code">Edéa/32T/3X</field>
+			<field name="taxes_id" eval="[(4, ref('account.1_tva_exempt_0'))]"/>
+			<field name="categ_id" ref="delivery.product_category_deliveries"></field>
+		</record>
+		<record id="product_delivery_edea_falcon" model="product.template">
+			<field name="name">Frais Livraison Edéa / 32T FALCON</field>
+			<field name="list_price">3017366</field>
+			<field name="standard_price">3017366</field>
+			<field name="type">service</field>
+			<field name="sale_ok">0</field>
+			<field name="purchase_ok">0</field>
+			<field name="default_code">Edéa/32T/FALCON</field>
+			<field name="taxes_id" eval="[(4, ref('account.1_tva_exempt_0'))]"/>
+			<field name="categ_id" ref="delivery.product_category_deliveries"></field>
+		</record>
+
+		<record id="delivery_carrier_edea_falcon" model="delivery.carrier">
+			<field name="name">Livraison Edéa - Falcon</field>
+			<field name="city_delivery" ref="mitsu_table_project.res_city_edea"></field>
+			<field name="delivery_bag_value">906.63</field>
+			<field name="delivery_type">fixed</field>
+			<field name="product_id" ref="mitsu_table_project.product_delivery_edea_falcon"></field>
+		</record>
+		<record id="delivery_carrier_edea_3x" model="delivery.carrier">
+			<field name="name">Livraison Edéa - 3X</field>
+			<field name="city_delivery" ref="mitsu_table_project.res_city_edea"></field>
+			<field name="delivery_bag_value">906.63</field>
+			<field name="delivery_type">fixed</field>
+			<field name="product_id" ref="mitsu_table_project.product_delivery_edea_3x"></field>
+		</record>
+	</data>
+</odoo>
