@@ -3,14 +3,12 @@ from odoo import models, fields, api
 class CrmLead(models.Model):
     _inherit = 'crm.lead'
     
-    # On relie les comptes analytiques à l'opportunité (One2many inverse)
     analytic_account_ids = fields.One2many(
         'account.analytic.account',
         'crm_lead_id',
         string="Comptes Analytiques liés"
     )
     
-    # Compte analytique principal
     analytic_account_id = fields.Many2one(
         'account.analytic.account',
         string="Compte Analytique Principal"
