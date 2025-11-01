@@ -5,7 +5,7 @@ from odoo.exceptions import UserError
 # 1. Ajout du drapeau Template
 class ProjectProject(models.Model):
     _inherit = 'project.project'
-
+    
     is_template = fields.Boolean(
         string="Est un Modèle (Template)",
         help="Si coché, ce projet ne peut pas recevoir de transactions financières (factures ou notes de frais)."
@@ -14,7 +14,7 @@ class ProjectProject(models.Model):
 # 2. Ajout du champ Produit dans la Tâche
 class ProjectTask(models.Model):
     _inherit = 'project.task'
-
+    
     product_id = fields.Many2one(
         'product.product',
         string="Produit lié (Template)",
@@ -24,7 +24,7 @@ class ProjectTask(models.Model):
 # 3. Restriction : Blocage des factures (Achat et Vente) sur les Templates
 class AccountMove(models.Model):
     _inherit = 'account.move'
-
+    
     @api.constrains('invoice_line_ids', 'move_type')
     def _check_template_project_accounting(self):
         for move in self:
@@ -40,7 +40,7 @@ class AccountMove(models.Model):
                         
                         if projects:
                             raise UserError(_(
-                                "Impossible de renseigner des factures d\'achat ou de vente sur un projet modèle (%s)."
+                                "Impossible de renseigner des factures d'achat ou de vente sur un projet modèle (%s)."
                             ) % projects.name)
 
 # 4. Restriction : Blocage des notes de frais sur les Templates

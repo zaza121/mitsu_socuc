@@ -4,7 +4,7 @@ from odoo.exceptions import UserError
 
 class SaleOrder(models.Model):
     _inherit = 'sale.order'
-
+    
     def action_confirm(self):
         so_products = self.order_line.mapped('product_id')
         
