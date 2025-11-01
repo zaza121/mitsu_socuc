@@ -3,7 +3,6 @@
     <record id="view_equipe_form" model="ir.ui.view">
         <field name="name">mitsu_hr.equipe.form</field>
         <field name="model">mitsu_hr.equipe</field>
-        <!-- Les vues de formulaire n'ont généralement pas besoin d'un type explicite. -->
         <field name="arch" type="xml">
             <form string="Équipe">
                 <header/>
@@ -29,12 +28,13 @@
     </record>
 
     <!-- 
-    CORRECTION APPLIQUÉE : Ajout de <field name="type">tree</field> pour prévenir l'erreur de validation.
+    NOUVELLE CORRECTION : 
+    Retrait du champ <field name="type">tree</field> pour laisser Odoo déduire le type 
+    via la balise racine <tree>, ce qui est la méthode standard et évite les conflits de validation.
     -->
     <record id="view_equipe_tree" model="ir.ui.view">
         <field name="name">mitsu_hr.equipe.list</field>
         <field name="model">mitsu_hr.equipe</field>
-        <field name="type">tree</field>
         <field name="arch" type="xml">
             <tree string="Équipes">
                 <field name="sequence" widget="handle"/>
