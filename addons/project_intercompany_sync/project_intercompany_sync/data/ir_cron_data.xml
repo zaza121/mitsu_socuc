@@ -4,7 +4,9 @@
         <field name="name">[Intercompany] Sync Tasks & Plannings</field>
         <field name="model_id" ref="project.model_project_task"/>
         <field name="state">code</field>
-        <field name="code">model._cron_sync_intercompany()</field>
+        <field name="code"><![CDATA[
+model._cron_sync_intercompany()
+        ]]></field>
         <field name="interval_number">10</field>
         <field name="interval_type">minutes</field>
         <field name="active">True</field>

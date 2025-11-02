@@ -1,19 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <record id="action_sync_selected_tasks" model="ir.actions.server">
-        <field name="name">🔄 Synchroniser avec société miroir</field>
+        <field name="name">Synchroniser avec société miroir</field>
         <field name="model_id" ref="project.model_project_task"/>
         <field name="binding_model_id" ref="project.model_project_task"/>
         <field name="binding_view_types">list</field>
         <field name="state">code</field>
-        <field name="code">
+        <field name="code"><![CDATA[
 if records:
-    # Exécute la méthode d'action sur les enregistrements sélectionnés
     action = records.action_sync_intercompany_now()
-    # Optionnel : retourner l'action (si l'environnement du server l'attend)
     result = action
 else:
     result = True
-        </field>
+        ]]></field>
     </record>
 </odoo>
