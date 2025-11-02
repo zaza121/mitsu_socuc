@@ -1,0 +1,6 @@
+Changelog - mitsu_hr (cleaned)
+- 2025-10-21: Cleaned module for Odoo 18
+  * Removed 'report' folder and legacy sale_invoice_margin code
+  * Fixed duplicated employee_ids field in equipe.py
+  * Cleaned manifest and views
+  * Added README and RELEASE_NOTES
