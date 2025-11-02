@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_task_form_inherit_intercompany_sync" model="ir.ui.view">
+        <field name="name">project.task.form.intercompany.sync</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_form2"/>
+        <field name="arch" type="xml">
+            <header position="inside">
+                <button name="action_sync_intercompany_now"
+                        string="Synchroniser maintenant"
+                        type="object"
+                        class="oe_highlight"
+                        invisible="mirrored_company_id == False"
+                        groups="project.group_project_manager"/>
+            </header>
+            <xpath expr="//field[@name='company_id']" position="after">
+                <field name="mirrored_company_id"/>
+                <field name="mirror_task_id" invisible="1"/>
+                <field name="origin_task_id" invisible="1"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_task_tree_inherit_intercompany_sync" model="ir.ui.view">
+        <field name="name">project.task.tree.intercompany.sync</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_tree2"/>
+        <field name="arch" type="xml">
+            <tree position="attributes">
+                <attribute name="multi_edit">1</attribute>
+            </tree>
+            <field name="project_id" position="after">
+                <field name="mirrored_company_id" optional="show"/>
+            </field>
+        </field>
+    </record>
+</odoo>

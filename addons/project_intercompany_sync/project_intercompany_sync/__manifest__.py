@@ -1,0 +1,27 @@
+{
+    "name": "Project Intercompany Time & Planning Sync",
+    "summary": "Synchronisation inter-sociétés : tâches, plannings et temps entre sociétés A↔B",
+    "version": "18.0.3.0.1",
+    "author": "Your Company / ChatGPT Odoo Dev",
+    "website": "https://yourcompany.com",
+    "category": "Services/Project",
+    "depends": [
+        "project",
+        "hr_timesheet",
+        "planning",
+        "sale_management",
+        "analytic",
+    ],
+    "data": [
+        "security/security.xml",
+        "security/ir.model.access.csv",
+        "views/res_company_views.xml",
+        "views/project_task_views.xml",
+        "views/project_task_actions.xml",
+        "views/planning_slot_views.xml",
+        "data/ir_cron_data.xml",
+    ],
+    "license": "OEEL-1",
+    "installable": True,
+    "application": False,
+}
