@@ -16,48 +16,48 @@
 				<field name="employee_id" readonly="1" />
 				<field name="project_id" />
 				<field name="task_id" readonly="1"/>
-				<field name="sale_line_id" readonly="1"/>
-				<field name="price_unit_table"  widget="monetary"  sum="Total Prix Unitaire"
+				<field name="sale_line_id" readonly="1"/>
+				<field name="price_unit_table"  widget="monetary"  sum="Total Prix Unitaire"
 					readonly="1"/>
-				<field name="quantity_table"  sum="Quantité"
+				<field name="quantity_table"  sum="Quantité"
 readonly="1"/>
 				<field name="time_task_table" string="Temps sur la
 tâche"
-					widget="timesheet_uom_no_toggle"  readonly="1"/>
+					widget="timesheet_uom_no_toggle"  readonly="1"/>
 				<field name="allocated_hours" string="Temps
 planifié"
-					widget="timesheet_uom_no_toggle" readonly="1"/>
+					widget="timesheet_uom_no_toggle" readonly="1"/>
 				<field name="time_to_plan" string="Temps à
 planifier"
-					widget="timesheet_uom_no_toggle"  optional="hide"
+					widget="timesheet_uom_no_toggle"  optional="hide"
 readonly="1"/>
 				<field name="time_to_realize" string="Temps
 réalisé"
-					widget="timesheet_uom_no_toggle"  optional="hide"
+					widget="timesheet_uom_no_toggle"  optional="hide"
 readonly="1"/>
 				<field name="hourly_cost_table"
-					widget="monetary" sum="Total Coût Unitaire de l'Employé"
+					widget="monetary" sum="Total Coût Unitaire de l'Employé"
 optional="hide" readonly="1"/>
 				<field name="projected_sales"
-					widget="monetary" optional="hide"
+					widget="monetary" optional="hide"
 					sum="Total CA Prévisionnel" readonly="1"/>
 				<field name="marged_sales"
-					widget="monetary" optional="hide"
+					widget="monetary" optional="hide"
 					sum="Total Marge Prévisionnelle" readonly="1"/>
 				<field name="projected_sales_realize"
-					widget="monetary" optional="hide" sum="Total CA Réalisé"
+					widget="monetary" optional="hide" sum="Total CA Réalisé"
 readonly="1"/>
 				<field name="employee_real_cost"
 					widget="monetary"
-sum="Total Coût Réel de l'Employé" optional="hide" readonly="1"/>
+sum="Total Coût Réel de l'Employé" optional="hide" readonly="1"/>
 				<field name="marged_realize"
-					widget="monetary" optional="hide"
+					widget="monetary" optional="hide"
 					sum="Total Marge Réalisée" readonly="1"/>
 				<field name="boni_mali" optional="hide"
 decoration-success="boni_mali == 'bon'"
 decoration-danger="boni_mali == 'mal'" readonly="1"/>
 				<field name="margin_difference"
-					widget="monetary" sum="Total Différence de Marge" optional="hide"
+					widget="monetary" sum="Total Différence de Marge" optional="hide"
 readonly="1"/>
 				<field name="currency_id"
 column_invisible="True"/>
@@ -79,19 +79,19 @@ options="{'enable_formatting': False}"/>
 				<field name="manager_id" groups="planning.group_planning_user"/>
 				<field name="name" groups="planning.group_planning_user"/>
 				<separator/>
-				<filter name="unpublished_shifts" string="Brouillon" domain="[('state', '=', 'draft')]" groups="planning.group_planning_manager"/>
+				<!-- <filter name="unpublished_shifts" string="Brouillon" domain="[('state', '=', 'draft')]" groups="planning.group_planning_manager"/>
 				<filter name="published_shifts" string="Publié" domain="[('state', '=', 'published')]" groups="planning.group_planning_manager"/>
 				<separator groups="planning.group_planning_manager"/>
-				<filter string="Date de Début" name="start_datetime" date="start_datetime" end_month="1">
-					<group expand="0" string="Group By">
-						<filter string="Employé" name="Employee" context="{'group_by':'employee_id'}"/>
+				<filter string="Date de Début" name="start_datetime" date="start_datetime" end_month="1"> -->
+					<!-- <group expand="0" string="Group By"> -->
+						<!-- <filter string="Employé" name="Employee" context="{'group_by':'employee_id'}"/>
 						<filter string="Projet" name="Project" context="{'group_by':'project_id'}"/>
 						<filter string="Tâche" name="Task" context="{'group_by':'task_id'}"/>
 						<filter string="Statut" name="State" context="{'group_by':'state'}"/>
 						<filter string="Mois" name="month" context="{'group_by':'start_datetime:month'}"/>
-						<filter string="Année" name="year" context="{'group_by':'start_datetime:year'}"/>
-					</group>
-				</filter>
+						<filter string="Année" name="year" context="{'group_by':'start_datetime:year'}"/> -->
+					<!-- </group> -->
+				<!-- </filter> -->
 			</search>
 		</field>
 	</record>

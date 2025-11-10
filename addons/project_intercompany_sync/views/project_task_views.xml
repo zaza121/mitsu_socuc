@@ -26,9 +26,9 @@
         <field name="model">project.task</field>
         <field name="inherit_id" ref="project.view_task_tree2"/>
         <field name="arch" type="xml">
-            <tree position="attributes">
+            <list position="attributes">
                 <attribute name="multi_edit">1</attribute>
-            </tree>
+            </list>
             <field name="project_id" position="after">
                 <field name="mirrored_company_id" optional="show"/>
             </field>

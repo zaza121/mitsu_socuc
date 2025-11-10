@@ -22,6 +22,10 @@ class PlanningSlot(models.Model):
     margin_difference = fields.Float(_("Différence de marge"), compute="_compute_margin_difference", store=True)
     currency_id = fields.Many2one(related='sale_line_id.currency_id', store=True, readonly=True)
     date_start = fields.Date(string='Date', related='project_id.date_start', store=True)
+    task_id = fields.Many2one(
+        string="Tache",
+        comodel_name='project.task'
+    )
 
     @api.depends('sale_line_id.product_uom_qty')
     def _compute_quantity_table(self):

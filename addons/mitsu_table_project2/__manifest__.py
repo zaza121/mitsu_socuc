@@ -7,7 +7,8 @@
     'author': 'MITSU',
     'license': 'AGPL-3',
     'sequence': 30,
-    'depends': ['mitsu_planning', 'mitsu_hr', 'planning', 'project', 'sale_timesheet', 'account', 'delivery', 'base'],
+    # 'depends': ['mitsu_planning', 'mitsu_hr', 'planning', 'project', 'sale_timesheet', 'account', 'delivery', 'base'],
+    'depends': ['planning', 'project', 'sale_timesheet', 'account', 'delivery', 'base', 'sale_planning', 'project_forecast'],
     'data': [
         'security/ir.model.access.csv',
         'views/planning_slot_view.xml',

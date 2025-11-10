@@ -9,7 +9,7 @@
 			<field name="sale_ok">0</field>
 			<field name="purchase_ok">0</field>
 			<field name="default_code">Edéa/32T/3X</field>
-			<field name="taxes_id" eval="[(4, ref('account.1_tva_exempt_0'))]"/>
+			<!-- <field name="taxes_id" eval="[(4, ref('account.1_tva_exempt_0'))]"/> -->
 			<field name="categ_id" ref="delivery.product_category_deliveries"></field>
 		</record>
 		<record id="product_delivery_edea_falcon" model="product.template">
@@ -20,11 +20,11 @@
 			<field name="sale_ok">0</field>
 			<field name="purchase_ok">0</field>
 			<field name="default_code">Edéa/32T/FALCON</field>
-			<field name="taxes_id" eval="[(4, ref('account.1_tva_exempt_0'))]"/>
+			<!-- <field name="taxes_id" eval="[(4, ref('account.1_tva_exempt_0'))]"/> -->
 			<field name="categ_id" ref="delivery.product_category_deliveries"></field>
 		</record>
 
-		<record id="delivery_carrier_edea_falcon" model="delivery.carrier">
+		<!-- <record id="delivery_carrier_edea_falcon" model="delivery.carrier">
 			<field name="name">Livraison Edéa - Falcon</field>
 			<field name="city_delivery" ref="mitsu_table_project.res_city_edea"></field>
 			<field name="delivery_bag_value">906.63</field>
@@ -37,6 +37,6 @@
 			<field name="delivery_bag_value">906.63</field>
 			<field name="delivery_type">fixed</field>
 			<field name="product_id" ref="mitsu_table_project.product_delivery_edea_3x"></field>
-		</record>
+		</record> -->
 	</data>
 </odoo>

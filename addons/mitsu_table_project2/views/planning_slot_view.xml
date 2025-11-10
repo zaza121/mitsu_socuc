@@ -9,50 +9,50 @@
 	<record id="planning_task_view_tree_table_mutsi" model="ir.ui.view">
 		<field name="name">planning.slot.table</field>
 		<field name="model">planning.slot</field>
-		<field name="inherit_id" ref="planning.planning_view_tree_slot"/>
+		<field name="inherit_id" ref="planning.planning_view_tree"/>
 		<field name="arch" type="xml">
 			<xpath expr="//field[@name='end_datetime']" position="after">
 				<field name="project_id" />
 				<field name="task_id" readonly="1"/>
-				<field name="sale_line_id" readonly="1"/>
-				<field name="price_unit_table" widget="monetary" sum="Total Prix Unitaire"
+				<field name="sale_line_id" readonly="1"/>
+				<field name="price_unit_table" widget="monetary" sum="Total Prix Unitaire"
 					readonly="1"/>
-				<field name="quantity_table" sum="Quantité" readonly="1"/>
+				<field name="quantity_table" sum="Quantité" readonly="1"/>
 				<field name="time_task_table" string="Temps sur la tâche"
-					widget="timesheet_uom_no_toggle"  readonly="1"/>
+					widget="timesheet_uom_no_toggle" readonly="1"/>
 				<field name="allocated_hours" string="Temps planifié"
-					widget="timesheet_uom_no_toggle" readonly="1"/>
+					widget="timesheet_uom_no_toggle" readonly="1"/>
 				<field name="time_to_plan" string="Temps à planifier"
-					widget="timesheet_uom_no_toggle"  optional="hide"
+					widget="timesheet_uom_no_toggle" optional="hide"
 readonly="1"/>
 				<field name="time_to_realize" string="Temps réalisé"
-					widget="timesheet_uom_no_toggle"  optional="hide"
+					widget="timesheet_uom_no_toggle" optional="hide"
 readonly="1"/>
 				<field name="time_to_realize_effective" string="Temps à réaliser"
-					widget="timesheet_uom_no_toggle"  optional="hide"
+					widget="timesheet_uom_no_toggle" optional="hide"
 readonly="1"/>
 				<field name="hourly_cost_table"
-					widget="monetary" sum="Total Coût Unitaire de l'Employé"
+					widget="monetary" sum="Total Coût Unitaire de l'Employé"
 optional="hide" readonly="1"/>
 				<field name="employee_cost_total_task"
-					widget="monetary" optional="hide" readonly="1" sum="Total Coût Tâche"/>
+					widget="monetary" optional="hide" readonly="1" sum="Total Coût Tâche"/>
 				<field name="projected_sales"
-					widget="monetary" optional="hide"
+					widget="monetary" optional="hide"
 					sum="Total CA Prévisionnel" readonly="1"/>
 				<field name="marged_sales"
-					widget="monetary" optional="hide"
+					widget="monetary" optional="hide"
 					sum="Total Marge Prévisionnelle" readonly="1"/>
 				<field name="projected_sales_realize"
-					widget="monetary" optional="hide" sum="Total CA Réalisé"
+					widget="monetary" optional="hide" sum="Total CA Réalisé"
 readonly="1"/>
 				<field name="employee_real_cost"
-					widget="monetary" sum="Total Coût Réel de l'Employé" optional="hide"
+					widget="monetary" sum="Total Coût Réel de l'Employé" optional="hide"
 readonly="1"/>
 				<field name="marged_realize"
-					widget="monetary" optional="hide"
+					widget="monetary" optional="hide"
 					sum="Total Marge Réalisée" readonly="1"/>
 				<field name="margin_difference"
-					widget="monetary" sum="Total Différence de Marge" optional="hide"
+					widget="monetary" sum="Total Différence de Marge" optional="hide"
 readonly="1"/>
 				<field name="currency_id" column_invisible="True"/>
 			</xpath>
