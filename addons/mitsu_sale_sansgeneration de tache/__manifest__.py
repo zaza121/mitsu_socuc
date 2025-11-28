@@ -11,10 +11,11 @@
         "account",
         "project",
         "planning",
+        "mitsu_sale"
     ],
     "data": [
         "security/ir.model.access.csv",
-        "views/sale_order_line_views.xml",
+        # "views/sale_order_line_views.xml",
     ],
     "tests": [
         "tests/test_sale_order_line.py",
