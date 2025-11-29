@@ -16,17 +16,17 @@ class SaleOrderLine(models.Model):
         string="Modèle Analytique (Ligne)",
     )
 
-    @api.onchange("role_id", "product_uom", "product_uom_qty")
-    def _onchange_role_id(self):
-        """Met à jour le prix unitaire selon le rôle et l'UoM (compatible Odoo 18)."""
-        for rec in self:
-            if rec.role_id and rec.product_uom:
-                # filtered_domain est plus performant et compatible Odoo 18+
-                line = rec.role_id.price_ids.filtered_domain([
-                    ("uom_id", "=", rec.product_uom.id)
-                ])
-                if line:
-                    rec.price_unit = line[0].amount
+    # @api.onchange("role_id", "product_uom", "product_uom_qty")
+    # def _onchange_role_id(self):
+    #     """Met à jour le prix unitaire selon le rôle et l'UoM (compatible Odoo 18)."""
+    #     for rec in self:
+    #         if rec.role_id and rec.product_uom:
+    #             # filtered_domain est plus performant et compatible Odoo 18+
+    #             line = rec.role_id.price_ids.filtered_domain([
+    #                 ("uom_id", "=", rec.product_uom.id)
+    #             ])
+    #             if line:
+    #                 rec.price_unit = line[0].amount
 
     @api.onchange("force_modele_id")
     def _onchange_force_modele_id(self):
