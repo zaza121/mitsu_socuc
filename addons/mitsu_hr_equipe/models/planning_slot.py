@@ -1,19 +1,12 @@
-# -*- coding: utf-8 -*-
-from odoo import api, fields, models
 
+from odoo import models, fields, api
 
 class PlanningSlot(models.Model):
     _inherit = 'planning.slot'
 
-    manager_ids = fields.Many2many(
-        comodel_name='res.users',
-        string='Managers d\'équipe',
-        compute="_compute_manager_ids",
-        store=True
-    )
+    employee_team_id = fields.Many2one('hr.employee.team', string='Équipe', compute='_compute_employee_team_id', store=True)
 
-    @api.depends("employee_id.equipe_ids.manager_id")
-    def _compute_manager_ids(self):
-        for rec in self:
-            # prend les managers des équipes auxquelles appartient l'employé
-            rec.manager_ids = rec.employee_id and rec.employee_id.equipe_ids.mapped('manager_id') or self.env['res.users']
+    @api.depends('employee_id.team_ids')
+    def _compute_employee_team_id(self):
+        for slot in self:
+            slot.employee_team_id = slot.employee_id.team_ids[:1].id if slot.employee_id and slot.employee_id.team_ids else False
