@@ -11,7 +11,7 @@
         "account",
         "project",
         "planning",
-        "mitsu_sale"
+        "mitsu_sale_crm_analytique_and_planning_role2"
     ],
     "data": [
         "security/ir.model.access.csv",
