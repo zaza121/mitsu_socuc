@@ -4,7 +4,7 @@
     "version": "1.0.0",
     "category": "Sales",
     "summary": "Intègre les rôles de planification et les modèles analytiques sur les lignes de vente (Odoo 18)",
-    "author": "Your Company",
+    "author": "MITSUKI TECHNOLOGIE CONSEIL",
     "license": "LGPL-3",
     "depends": [
         "sale_management",

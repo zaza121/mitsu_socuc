@@ -4,7 +4,7 @@
   'category': 'Human Resources',
   'summary': 'Gestion des équipes de travail avec planning',
   'description': "Permet de créer des équipes, gérer les membres et filtrer le planning par équipe.",
-  'author': 'Votre Entreprise',
+  'author': 'MITSUKI TECHNOLOGIE CONSEIL',
   'website': 'https://www.votresite.com',
   'depends': ['hr', 'planning'],
   'data': [
