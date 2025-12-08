@@ -1,5 +1,5 @@
 {
-  'name': 'HR Employee Team',
+  'name': 'mitsu_hr_equipe',
   'version': '18.0.1.0.0',
   'category': 'Human Resources',
   'summary': 'Gestion des équipes de travail avec planning',
