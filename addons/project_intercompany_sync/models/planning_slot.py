@@ -6,15 +6,19 @@ _logger = logging.getLogger(__name__)
 class PlanningSlot(models.Model):
     _inherit = "planning.slot"
 
-    mirror_slot_id = fields.Many2one("planning.slot", string="Créneau miroir")
-    origin_slot_id = fields.Many2one("planning.slot", string="Créneau d'origine")
+    # CHAMPS MODIFIÉS : Ajout de readonly=True
+    mirror_slot_id = fields.Many2one("planning.slot", string="Créneau miroir", readonly=True)
+    origin_slot_id = fields.Many2one("planning.slot", string="Créneau d'origine", readonly=True)
+    
+    # CHAMPS DE LIAISON (Relatif à la tâche mère)
     mirrored_company_id = fields.Many2one(
-        "res.company", string="Société miroir", related="task_id.mirrored_company_id", store=True
+        "res.company", string="Société miroir", related="task_id.mirrored_company_id", store=True, readonly=True
     )
 
     @api.model_create_multi
     def create(self, vals_list):
         slots = super().create(vals_list)
+        # La synchronisation immédiate (A -> B) est conservée ici
         for slot in slots:
             try:
                 slot.sudo()._create_or_update_mirror_slot()
@@ -24,6 +28,7 @@ class PlanningSlot(models.Model):
 
     def write(self, vals):
         res = super().write(vals)
+        # La synchronisation immédiate (A -> B) est conservée ici
         if not self.env.context.get("skip_mirror_sync"):
             for slot in self:
                 try:
@@ -35,6 +40,7 @@ class PlanningSlot(models.Model):
     def _create_or_update_mirror_slot(self):
         for slot in self:
             task = slot.task_id
+            # On vérifie si la synchro est active sur la tâche
             if not task or not task.mirrored_company_id:
                 continue
             mirror_company = task.mirrored_company_id
@@ -47,12 +53,14 @@ class PlanningSlot(models.Model):
             # Environnement pour création dans la société miroir
             mirror_env = self.env["planning.slot"].with_company(mirror_company).sudo()
 
+            # NOTE : On ne synchronise PAS l'employé/utilisateur car ils sont locaux à la Société A.
+            # L'employé/utilisateur B sera assigné sur le créneau miroir B.
             vals = {
                 "start_datetime": slot.start_datetime,
                 "end_datetime": slot.end_datetime,
                 "allocated_hours": slot.allocated_hours,
-                "employee_id": slot.employee_id.id,
-                "user_id": slot.user_id.id,
+                "user_id": False,  # Important : Laisser vide pour que B puisse assigner
+                "employee_id": False, # Important : Laisser vide pour que B puisse assigner
                 "task_id": mirror_task.id,
                 "company_id": mirror_company.id,
                 "origin_slot_id": slot.id,

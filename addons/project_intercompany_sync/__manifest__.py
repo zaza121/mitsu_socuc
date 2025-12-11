@@ -1,27 +1,39 @@
 {
-    "name": "Project Intercompany Time & Planning Sync",
-    "summary": "Synchronisation inter-sociétés : tâches, plannings et temps entre sociétés A↔B",
-    "version": "18.0.3.0.1",
-    "author": "Your Company / ChatGPT Odoo Dev",
-    "website": "https://yourcompany.com",
-    "category": "Services/Project",
-    "depends": [
-        "project",
-        "hr_timesheet",
-        "planning",
-        "sale_management",
-        "analytic",
+    'name': "Project Intercompany Sync",
+    'summary': "Synchronisation des tâches, temps alloué, planning et feuilles de temps entre les sociétés mères et sous-traitantes.",
+    'version': '1.0',
+    'category': 'Project/Timesheets',
+    
+    # Modules obligatoires
+    'depends': [
+        'base',
+        'project',
+        'hr_timesheet',  # Pour planned_hours et feuilles de temps
+        'sale_project',  # Pour product_id (si utilisé)
+        'planning',      # Pour planning.slot
     ],
-    "data": [
-        "security/security.xml",
-        "security/ir.model.access.csv",
-        "views/res_company_views.xml",
-        "views/project_task_views.xml",
-        "views/project_task_actions.xml",
-        "views/planning_slot_views.xml",
-        "data/ir_cron_data.xml",
+    
+    # Fichiers de données
+    'data': [
+        # --- Sécurité (Doit être chargé en premier !) ---
+        'security/security.xml',
+        'security/ir.model.access.csv',
+        
+        # --- Vues de Configuration ---
+        'views/res_company_views.xml', # AJOUTÉ : POUR LA CASE 'Est un Sous-traitant'
+        
+        # --- Vues Projet & Tâche ---
+        'views/project_task_views.xml',
+        'views/project_task_actions.xml', # AJOUTÉ : POUR L'ACTION 'Synchroniser maintenant' (si créé)
+        
+        # --- Vues Planning ---
+        'views/planning_slot_views.xml', # AJOUTÉ
+        
+        # --- Tâches Planifiées (CRON) ---
+        'data/ir_cron_data.xml',
     ],
-    "license": "OEEL-1",
-    "installable": True,
-    "application": False,
+    
+    'installable': True,
+    'application': False,
+    'license': 'LGPL-3',
 }

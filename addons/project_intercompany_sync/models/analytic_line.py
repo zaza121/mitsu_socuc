@@ -7,18 +7,43 @@ _logger = logging.getLogger(__name__)
 class AccountAnalyticLine(models.Model):
     _inherit = "account.analytic.line"
 
+    # NOUVEAUX CHAMPS POUR LA SYNCHRONISATION CRON (B -> A)
+    
+    origin_analytic_line_id = fields.Many2one(
+        'account.analytic.line', 
+        string="Feuille de Temps d'Origine", 
+        readonly=True,
+        help="Référence à la feuille de temps originale dans la société miroir (B)."
+    )
+    
+    synced_to_origin = fields.Boolean(
+        string="Synchronisé vers l'Origine", 
+        default=False,
+        help="Indique si cette feuille de temps de la tâche miroir (B) a été copiée vers la tâche d'origine (A)."
+    )
+    
+    # ----------------------------------------------------
+    # MODIFICATION DE LA LOGIQUE EXISTANTE (CRÉATION)
+    # ----------------------------------------------------
+
     @api.model_create_multi
     def create(self, vals_list):
         current_user = self.env.user
+        
+        # Le flag 'skip_mirror_sync' est utilisé par notre code CRON dans project_task.py
+        # pour créer la ligne miroir (FT A) sans déclencher la vérification du planning.
+        skip_planning_check = self.env.context.get("skip_mirror_sync") or self.env.context.get("skip_planning_check")
+
         for vals in vals_list:
             task_id = vals.get("task_id")
-            if not task_id:
+            if not task_id or skip_planning_check:
                 continue
 
             task = self.env["project.task"].browse(task_id)
             if not task:
                 continue
 
+            # Vérification du planning existante
             slot_domain = [
                 ("task_id", "=", task.id),
                 "|",
@@ -26,6 +51,8 @@ class AccountAnalyticLine(models.Model):
                 ("employee_id.user_id", "=", current_user.id),
             ]
             slot = self.env["planning.slot"].sudo().search(slot_domain, limit=1)
+            
+            # Application de la règle du planning, sauf si le CRON est en train de créer la ligne miroir.
             if not slot:
                 raise AccessError(
                     _("Vous ne pouvez saisir du temps que si vous avez été planifié sur cette tâche.")
@@ -33,45 +60,10 @@ class AccountAnalyticLine(models.Model):
 
         lines = super().create(vals_list)
 
-        for line in lines:
-            if not self.env.context.get("skip_mirror_sync"):
-                try:
-                    line.sudo()._sync_mirror_timesheet()
-                except Exception:
-                    _logger.exception("Erreur lors de la synchronisation des timesheets miroir pour la ligne %s", line.id)
+        # L'ancienne logique de synchronisation immédiate (_sync_mirror_timesheet) est retirée.
+        # Le tracking est désormais géré par le CRON dans project_task.py.
+        
         return lines
 
-    def _sync_mirror_timesheet(self):
-        for line in self:
-            task = line.task_id
-            if not task:
-                continue
-            target_task = task.mirror_task_id or task.origin_task_id
-            if not target_task:
-                continue
-            if not target_task.company_id:
-                # Sans société cible, ne pas créer la ligne miroir
-                continue
-            vals = line._prepare_mirror_vals(target_task)
-            try:
-                # Créer la ligne analytique sur la société cible en sudo et en évitant la récursion
-                self.with_context(skip_mirror_sync=True).sudo().with_company(target_task.company_id).create(vals)
-            except Exception:
-                _logger.exception("Impossible de créer la ligne analytique miroir pour la ligne %s", line.id)
-
-    def _prepare_mirror_vals(self, target_task):
-        self.ensure_one()
-        return {
-            "name": self.name,
-            "date": self.date,
-            "unit_amount": self.unit_amount,
-            "employee_id": self.employee_id.id if self.employee_id else False,
-            "user_id": self.user_id.id if self.user_id else False,
-            "project_id": target_task.project_id.id,
-            "task_id": target_task.id,
-            "company_id": target_task.company_id.id,
-            "product_id": self.product_id.id if self.product_id else False,
-            "account_id": target_task.project_id.analytic_account_id.id
-            if target_task.project_id and target_task.project_id.analytic_account_id
-            else False,
-        }
+    # Les méthodes _sync_mirror_timesheet et _prepare_mirror_vals existantes sont retirées
+    # car elles sont remplacées par la logique de remontée centralisée du CRON.

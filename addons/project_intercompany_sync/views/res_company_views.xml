@@ -5,11 +5,11 @@
         <field name="model">res.company</field>
         <field name="inherit_id" ref="base.view_company_form"/>
         <field name="arch" type="xml">
-            <xpath expr="//page[@name='general_info']//group[1]" position="inside">
-                <group string="Inter-sociétés">
+            <field name="vat" position="after"> 
+                <group string="Inter-sociétés" name="intercompany_settings">
                     <field name="is_subcontractor"/>
                 </group>
-            </xpath>
+            </field>
         </field>
     </record>
 </odoo>

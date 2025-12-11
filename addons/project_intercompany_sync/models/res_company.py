@@ -1,10 +1,9 @@
-from odoo import models, fields
+from odoo import fields, models
 
 class ResCompany(models.Model):
-    _inherit = "res.company"
-
+    _inherit = 'res.company'
+    
     is_subcontractor = fields.Boolean(
-        string="Société sous-traitante",
-        help="Indique si cette société peut être utilisée comme société miroir inter-sociétés.",
-        default=False,
+        string="Est sous-traitante",
+        help="Cochez cette case si cette société peut être sélectionnée comme société miroir dans les tâches inter-sociétés."
     )
