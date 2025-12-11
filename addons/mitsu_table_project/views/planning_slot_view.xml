@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+     <record model="ir.actions.act_window" id="action_planning_slot_mutsi">
+            <field name="name">Tableau Planning</field>
+            <field name="res_model">planning.slot</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">list</field>
+    </record>
+     <!-- The main base of the project.task list view -->
+        <record id="planning_task_view_tree_table_mutsi" model="ir.ui.view">
+            <field name="name">planning.slot.table</field>
+            <field name="model">planning.slot</field>
+            <field name="arch" type="xml">
+                <list string="Tableau planning" sample="1" default_order="id desc">
+                    <field name="create_date" string="Date" widget="date" readonly="1" />
+                    <field name="resource_id" readonly="1" />
+                    <field name="role_id" />
+                    <field name="project_id" />
+                    <field name="task_id" readonly="1"/>
+                    <field name="sale_line_id"  readonly="1"/>
+                    <field name="price_unit_table"  widget="monetary"  sum="Total prix unitaire"
+                        readonly="1"/>
+                    <field name="quantity_table"  sum="Quantité" readonly="1"/>
+                    <field name="time_task_table" string="Temps sur la tâche" 
+                        widget="timesheet_uom_no_toggle"  readonly="1"/>
+                    <field name="allocated_hours" string="Temps planifié" 
+                        widget="float_time"  readonly="1"/>
+                    <field name="time_to_plan" string="Temps à planifier" 
+                        widget="timesheet_uom_no_toggle"  optional="hide" readonly="1"/>
+                    <field name="time_to_realize" string="Temps réaliser" 
+                        widget="timesheet_uom_no_toggle"  optional="hide" readonly="1"/>
+                    <field name="time_to_realize_effective" string="Temps à réaliser" 
+                        widget="timesheet_uom_no_toggle"  optional="hide" readonly="1"/>
+                    <field name="hourly_cost_table" 
+                        widget="monetary"  sum="Total coût unitaire de l'employée" optional="hide" readonly="1"/>
+                    <field name="employee_cost_total_task" 
+                        widget="monetary"  optional="hide" readonly="1" sum="Total de l'employée"/>
+                    <field name="projected_sales" 
+                        widget="monetary"  optional="hide" 
+                        sum="Total Marge prévisionnel" readonly="1"/>
+                    <field name="marged_sales" 
+                        widget="monetary"  optional="hide" 
+                        sum="Total CA réaliser" readonly="1"/>
+                    <field name="projected_sales_realize" 
+                        widget="monetary"  optional="hide" sum="Total CA réaliser" readonly="1"/>
+                    <field name="employee_real_cost" 
+                        widget="monetary" sum="Total Coût réel de l'employée"  optional="hide" readonly="1"/>
+                    <field name="marged_realize" 
+                        widget="monetary"  optional="hide" 
+                        sum="Total Marge réaliser" readonly="1"/>
+                    <field name="margin_difference" 
+                        widget="monetary"  sum="Total Différence de marge" optional="hide" readonly="1"/>
+                    <field name="currency_id" column_invisible="True"/>
+                    <field name="id" optional="hide" options="{'enable_formatting': False}"/>
+                </list>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="planning_list_mitsu">
+            <field name="sequence" eval="1"/>
+            <field name="view_mode">list</field>
+            <field name="view_id" ref="planning_task_view_tree_table_mutsi"/>
+            <field name="act_window_id" ref="action_planning_slot_mutsi"/>
+        </record>
+
+        <!-- <menuitem id="menu_planning_table_task1"
+                  name="Rapport"
+                  parent="project.menu_main_pm"
+                  action="mitsu_table_project.action_planning_slot_mutsi"
+                  sequence="3"/> -->
+</odoo>
