@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_project_project_search_inherit_team" model="ir.ui.view">
+        <field name="name">project.project.search.inherit.team</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.view_project_project_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='user_id']" position="after">
+                <filter string="Mes équipes" name="projects_my_teams"
+                        domain="[('employee_team_id.team_leader_id.user_id', '=', uid)]"/>
+            </xpath>
+            <xpath expr="//group" position="inside">
+                <filter string="Équipe" name="group_by_team" context="{'group_by': 'employee_team_id'}"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_task_search_form_inherit_team" model="ir.ui.view">
+        <field name="name">project.task.search.inherit.team</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_search_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='my_tasks']" position="after">
+                <filter string="Tâches de mes équipes" name="tasks_my_teams"
+                        domain="[('employee_team_id.team_leader_id.user_id', '=', uid)]"/>
+            </xpath>
+            <xpath expr="//group" position="inside">
+                <filter string="Équipe assignée" name="group_by_team" context="{'group_by': 'employee_team_id'}"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

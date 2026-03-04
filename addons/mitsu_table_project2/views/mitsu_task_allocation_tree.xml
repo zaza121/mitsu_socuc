@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_mitsu_task_allocation_list" model="ir.ui.view">
+        <field name="name">mitsu.task.allocation.list</field>
+        <field name="model">mitsu.task.allocation</field>
+        <field name="arch" type="xml">
+            <list string="Analyse Rentabilité"
+                  create="false"
+                  delete="false">
+
+                <!-- IDENTITÉ -->
+                <field name="project_id"/>
+                <field name="task_id"/>
+                <field name="employee_id"/>
+                <field name="analytic_account_id"/>
+
+                <!-- PÉRIODE -->
+                <field name="year"/>
+                <field name="month"/>
+
+                <!-- TEMPS -->
+                <field name="time_allocated" sum="Total"/>
+                <field name="time_planned" sum="Total"/>
+                <field name="time_realized" sum="Total"/>
+                <field name="time_to_realize" sum="Total"/>
+
+                <!-- FINANCES -->
+                <field name="ca_previsionnel" sum="Total"/>
+                <field name="ca_realise" sum="Total"/>
+                <field name="marge_previsionnelle" sum="Total"/>
+                <field name="marge_realisee" sum="Total"/>
+
+                <!-- PERFORMANCE -->
+                <field name="boni_mali"
+                       sum="Total"
+                       decoration-danger="boni_mali &lt; 0"
+                       decoration-success="boni_mali &gt; 0"/>
+
+            </list>
+        </field>
+    </record>
+
+</odoo>

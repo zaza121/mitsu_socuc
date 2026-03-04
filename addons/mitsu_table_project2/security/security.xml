@@ -1,0 +1,6 @@
+<odoo>
+    <record id="group_mitsu_rentabilite_read" model="res.groups">
+        <field name="name">Rentabilité Projet - Lecture</field>
+        <field name="category_id" ref="base.module_category_project"/>
+    </record>
+</odoo>

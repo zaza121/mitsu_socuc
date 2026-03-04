@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_mitsu_task_allocation_search" model="ir.ui.view">
+        <field name="name">mitsu.task.allocation.search</field>
+        <field name="model">mitsu.task.allocation</field>
+        <field name="arch" type="xml">
+            <search string="Recherche Rentabilité">
+                <field name="project_id"/>
+                <field name="task_id"/>
+                <field name="employee_id"/>
+                <field name="analytic_account_id"/>
+
+                <separator/>
+
+                <filter string="Année en cours" 
+                        name="current_year" 
+                        domain="[('year', '=', context_today().year)]"/>
+                
+                <filter string="Mois en cours" 
+                        name="current_month" 
+                        domain="[('year', '=', context_today().year), ('month', '=', context_today().month)]"/>
+
+                <separator/>
+
+                <filter string="Temps réalisé" 
+                        name="has_realized" 
+                        domain="[('time_realized', '>', 0)]"/>
+                <filter string="À réaliser" 
+                        name="to_realize" 
+                        domain="[('time_to_realize', '>', 0)]"/>
+
+                <separator/>
+
+                <group expand="0" string="Regrouper par">
+                    <filter string="Projet" name="group_by_project" context="{'group_by': 'project_id'}"/>
+                    <filter string="Employé" name="group_by_employee" context="{'group_by': 'employee_id'}"/>
+                    <filter string="Mois" name="group_by_month" context="{'group_by': 'month'}"/>
+                    <filter string="Année" name="group_by_year" context="{'group_by': 'year'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+</odoo>

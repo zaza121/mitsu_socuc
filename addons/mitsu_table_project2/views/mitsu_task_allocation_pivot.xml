@@ -1,0 +1,20 @@
+<odoo>
+    <record id="view_mitsu_task_allocation_pivot" model="ir.ui.view">
+        <field name="name">mitsu.task.allocation.pivot</field>
+        <field name="model">mitsu.task.allocation</field>
+        <field name="arch" type="xml">
+            <pivot string="Analyse Rentabilité">
+                <field name="project_id" type="row"/>
+                <field name="analytic_account_id" type="row"/>
+                <field name="employee_id" type="row"/>
+                <field name="year" type="col"/>
+                <field name="month" type="col"/>
+
+                <field name="ca_previsionnel" type="measure"/>
+                <field name="ca_realise" type="measure"/>
+                <field name="marge_realisee" type="measure"/>
+                <field name="boni_mali" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+</odoo>

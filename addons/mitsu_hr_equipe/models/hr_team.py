@@ -1,4 +1,3 @@
-
 from odoo import models, fields, api
 
 class HrEmployeeTeam(models.Model):

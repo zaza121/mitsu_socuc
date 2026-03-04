@@ -1,0 +1,288 @@
+SFD – Spécification Fonctionnelle Détaillée** du module **Rentabilité Projet Mitsu**
+
+---
+
+# 📘 SFD – RENTABILITÉ PROJET (ODOO 18)
+
+## 1. CONTEXTE & OBJECTIFS
+
+### 1.1 Contexte
+
+Dans Odoo, les données de rentabilité projet sont réparties entre :
+
+* les **ventes** (bons de commande, lignes de service),
+* les **projets et tâches**,
+* le **planning**,
+* les **feuilles de temps**,
+* la **comptabilité analytique**.
+
+Il n’existe pas de vue standard consolidant :
+
+* le **prévisionnel** (heures vendues, coûts théoriques),
+* le **réel** (temps passé, coûts réels),
+* la **marge** et le **boni/mali**,
+* avec une **lecture par période et analytique**.
+
+---
+
+### 1.2 Objectifs fonctionnels
+
+Le module a pour objectif de fournir :
+
+* une **analyse fiable de la rentabilité projet**,
+* une lecture **prévisionnel vs réel**,
+* une analyse **par mois / année**,
+* une analyse **par compte analytique**,
+* des vues adaptées aux **DAF, chefs de projet et direction**.
+
+---
+
+## 2. PÉRIMÈTRE FONCTIONNEL
+
+### Inclus
+
+* Projets liés à des ventes (services)
+* Tâches avec heures vendues
+* Feuilles de temps validées
+* Comptes analytiques
+* Multi-projets / multi-employés
+
+### Exclus
+
+* Facturation fournisseur
+* Achats
+* Projets sans activité (sans temps saisi)
+
+---
+
+## 3. MODÈLE DE DONNÉES
+
+### 3.1 Modèle technique
+
+* **Modèle** : `mitsu.task.allocation`
+* **Type** : Vue SQL (`_auto = False`)
+* **Mise à jour** : dynamique (lecture seule)
+
+---
+
+### 3.2 Champs fonctionnels
+
+#### Identification
+
+| Champ             | Description              |
+| ----------------- | ------------------------ |
+| Projet            | Projet Odoo              |
+| Tâche             | Tâche projet             |
+| Employé           | Ressource                |
+| Compte analytique | Axe analytique principal |
+
+#### Période
+
+| Champ | Description     |
+| ----- | --------------- |
+| Date  | Date d’activité |
+| Mois  | Mois (1–12)     |
+| Année | Année           |
+
+#### Temps
+
+| Champ         | Description    |
+| ------------- | -------------- |
+| Temps alloué  | Heures vendues |
+| Temps réalisé | Heures saisies |
+
+#### Financier prévisionnel
+
+| Champ                | Description                    |
+| -------------------- | ------------------------------ |
+| CA prévisionnel      | Heures vendues × prix de vente |
+| Coût prévisionnel    | Heures vendues × coût horaire  |
+| Marge prévisionnelle | CA – coût                      |
+
+#### Financier réel
+
+| Champ        | Description                      |
+| ------------ | -------------------------------- |
+| CA réel      | Heures réalisées × prix de vente |
+| Coût réel    | Heures réalisées × coût horaire  |
+| Marge réelle | CA – coût                        |
+
+#### Performance
+
+| Champ       | Description                         |
+| ----------- | ----------------------------------- |
+| Boni / Mali | Marge réelle – marge prévisionnelle |
+
+---
+
+## 4. RÈGLES DE GESTION
+
+### 4.1 Création des lignes
+
+Une ligne apparaît dans le rapport lorsqu’il existe :
+
+* au moins une **feuille de temps saisie** sur la tâche.
+
+> 🎯 Logique volontaire : *pas de rentabilité sans activité réelle*.
+
+---
+
+### 4.2 Prévisionnel
+
+* Basé sur :
+
+  * les **heures vendues** (`allocated_hours`),
+  * le **prix unitaire de la ligne de vente**,
+  * le **coût horaire employé**.
+
+---
+
+### 4.3 Réel
+
+* Basé sur :
+
+  * les **feuilles de temps** (`account_analytic_line`),
+  * la **date réelle d’activité**,
+  * le **compte analytique de la ligne de temps**.
+
+---
+
+### 4.4 Période
+
+* La période est déterminée par :
+
+  1. la date de la feuille de temps,
+  2. regroupée par **mois / année**.
+
+---
+
+## 5. VUES UTILISATEUR
+
+### 5.1 Vue Liste (Tree)
+
+Objectifs :
+
+* lecture détaillée ligne par ligne,
+* contrôle opérationnel.
+
+Colonnes clés :
+
+* projet, tâche, employé,
+* date,
+* heures,
+* CA / coût / marge,
+* boni / mali avec code couleur.
+
+---
+
+### 5.2 Vue Pivot
+
+Objectifs :
+
+* analyse consolidée,
+* pilotage financier.
+
+Axes disponibles :
+
+* Projet
+* Compte analytique
+* Employé
+* Mois / Année
+
+Mesures :
+
+* CA prévisionnel
+* CA réel
+* Marge réelle
+* Boni / Mali
+
+---
+
+### 5.3 Filtres prédéfinis
+
+| Filtre         | Description            |
+| -------------- | ---------------------- |
+| Année en cours | Analyse N              |
+| Mois en cours  | Analyse M              |
+| Prévisionnel   | Lignes sans temps réel |
+| Réel           | Lignes avec temps réel |
+
+---
+
+## 6. SÉCURITÉ
+
+### 6.1 Groupes
+
+* **Rentabilité Projet – Lecture**
+
+  * Accès lecture seule au rapport
+
+---
+
+### 6.2 Droits
+
+| Droit        | Autorisé |
+| ------------ | -------- |
+| Lecture      | ✅        |
+| Création     | ❌        |
+| Modification | ❌        |
+| Suppression  | ❌        |
+
+---
+
+## 7. PERFORMANCE & TECHNIQUE
+
+### 7.1 Choix techniques
+
+* Vue SQL (pas de calcul Python)
+* Agrégations SQL
+* Pivot natif Odoo
+
+### 7.2 Avantages
+
+* Très performant sur gros volumes
+* Pas de redondance de données
+* Données toujours à jour
+
+---
+
+## 8. CAS D’USAGE MÉTIER
+
+### DAF
+
+* Analyse de marge par projet
+* Suivi mensuel
+* Détection des dérives
+
+### Chef de projet
+
+* Suivi des heures consommées
+* Comparaison prévu / réel
+* Anticipation du dépassement
+
+### Direction
+
+* Vision consolidée
+* Pilotage global de la rentabilité
+
+---
+
+## 9. ÉVOLUTIONS PRÉVUES (HORS PÉRIMÈTRE)
+
+* Taux de marge %
+* Alertes dépassement
+* Intégration achats
+* Multi-devises avancé
+* Budget analytique
+
+---
+
+## ✅ CONCLUSION
+
+Cette solution fournit :
+
+* une **vision claire, fiable et actionnable** de la rentabilité projet,
+* un outil **aligné métier (DAF / Projet / Direction)**,
+* une implémentation **robuste et scalable** sous Odoo 18.
+
+

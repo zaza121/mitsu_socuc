@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_mitsu_task_allocation_list" model="ir.ui.view">
+        <field name="name">mitsu.task.allocation.list</field>
+        <field name="model">mitsu.task.allocation</field>
+        <field name="arch" type="xml">
+            <list string="Rentabilité Projet" create="false" delete="false">
+                
+                <field name="project_id"/> 
+                <field name="employee_id"/>
+                <field name="task_id"/>
+                <field name="sale_line_id" string="Article de bon de commande"/>
+                <field name="unit_price" widget="monetary" string="Prix"/>
+
+                <field name="analytic_account_id" optional="show"/>
+                
+                <field name="year" optional="hide"/>
+                <field name="month" optional="hide"/>
+
+                <field name="time_allocated" widget="float_time" sum="Total" optional="show"/>
+                <field name="time_planned" widget="float_time" sum="Total" optional="show"/>
+                <field name="time_realized" widget="float_time" sum="Total" optional="show"/>
+                <field name="time_to_plan" widget="float_time" sum="Total" string="Temps à planifier" optional="show"/>
+                <field name="time_to_realize" widget="float_time" sum="Total" string="Temps à réaliser" optional="show"/>
+
+                <field name="ca_previsionnel" widget="monetary" sum="Total" optional="show"/>
+                <field name="cout_previsionnel" widget="monetary" sum="Total" string="Coût prévisionnel" optional="show"/>
+                <field name="marge_previsionnelle" widget="monetary" sum="Total" optional="show"/>
+                
+                <field name="ca_realise" widget="monetary" sum="Total" optional="show"/>
+                <field name="cout_realise" widget="monetary" sum="Total" string="Coût réalisé" optional="show"/>
+                <field name="marge_realisee" widget="monetary" sum="Total" optional="show"/>
+
+                <field name="boni_mali" widget="monetary" sum="Total"
+                       decoration-danger="boni_mali &lt; 0"
+                       decoration-success="boni_mali &gt; 0"
+                       optional="show"/>
+                
+                <field name="currency_id" column_invisible="True"/>
+            </list>
+        </field>
+    </record>
+</odoo>
